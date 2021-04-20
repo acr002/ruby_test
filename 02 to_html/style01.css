@@ -1,0 +1,138 @@
+
+body {
+}
+
+div.body_base {
+  width: 96%;
+  margin: 0 auto;
+}
+
+header{
+  border-bottom: solid 4px grey;
+}
+header h1{
+  padding: 0;
+  margin: 1em 0 0.2em;
+}
+header nav {
+  border-top: solid 4px grey;
+  padding: 0 1em;
+}
+header nav ul{
+  padding: 0;
+  margin: 0;
+}
+header nav ul li{
+  padding: 4px 4px 0;
+  height: 1.5em;
+  display: inline-block;
+}
+
+main{
+  float: left;
+  width: 86%;
+/*  background-color: #c0c0c0; */
+}
+
+aside{
+  margin-top: 2em;
+}
+
+
+
+
+footer{
+  clear: both;
+  border-top: solid 4px grey;
+/* margin: 8px auto; */
+  margin-top: 2em;
+  padding-right: 1em;
+  text-align: right;
+  color: grey;
+}
+
+section{
+  clear: both;
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: solid 2px grey;
+}
+
+section h1{
+  border-left: solid 8px deepskyblue;
+  padding: 0.2em 0.4em 0;
+}
+
+/* color
+  orange          #ffa500
+  lightsalmon     #ffa07a
+  lightskyblue    #87cefa
+  lightblue       #add8e6
+  moccasin        #ffe4b5
+  blue            #0000ff
+  mediumblue      #0000cd
+  deepskyblue     #00bfff
+  lightsteelblue  #b0c4de
+ */
+
+section p{
+  clear: both;
+  padding-top: 0;
+  margin-top: 0;
+  line-height: 1;
+}
+
+.cross-table {
+  float: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+  overflow: hidden;
+  color: black;
+}
+.cross-table tr:hover {
+  background-color: lightsteelblue;
+}
+.cross-table td, .cross-table th {
+  padding: 0.4em 0.8em;
+  border: solid 1px black;
+  position: relative;
+  text-align: center;
+}
+
+.cross-table td:hover {
+  background-color: lightsteelblue;
+}
+.cross-table td:hover:after {
+  content: "";
+  background-color: lightsteelblue;
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  z-index: -1;
+}
+
+table.hash{
+  margin: 0 0 1em;
+  border-collapse: collapse;
+}
+table.hash tr{
+  border-top: solid 1px grey;
+  border-bottom: solid 1px grey;
+}
+table.hash th{
+  padding: 0.4em 1em;
+  background-color: lightsteelblue;
+  text-align: left;
+}
+
+table.hash td{
+  padding: 0.4em 0.4em;
+  text-align: right;
+}
+
+img.graph{
+  padding-left: 2em;
+}
