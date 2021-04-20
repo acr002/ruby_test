@@ -1,6 +1,7 @@
 
 gc = load_text
 apf = load_apf
+path = FC.new
 
 gc.each do |line|
   h[:s01] = line.to_x(:s01)
@@ -9,6 +10,7 @@ gc.each do |line|
   h[:s01].add(1) unless h[:s02].empty?
 end
 
+File.open("#{path.basename}.mcs", 'w'){|f| f.puts gc}
 
 
 
