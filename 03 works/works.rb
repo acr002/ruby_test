@@ -1,5 +1,6 @@
 
 require '../00 lib/rw_apf.rb'
+require './rw_gc.rb'
 require './rw_fc.rb'
 
 gc = load_text
