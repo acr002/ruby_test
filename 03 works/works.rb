@@ -3,6 +3,7 @@ require './01 lib/log.rb'
 require './01 lib/rw_apf.rb'
 require './01 lib/rw_gc.rb'
 require './01 lib/rw_fc.rb'
+require './01 lib/rw_works.rb'
 
 log = Hash.new
 log[:main] = Log.new('main')
@@ -14,7 +15,12 @@ log[:main].sf '[apf count]', apf.size
 log[:main].sf '[theme]', 'test'
 ################################
 
-p apf
+gc.each do |line|
+  p line
+end
+# buf = Gline.new('10001 01112013')
+# p buf
+
 log.log_put_csv
 
 __END__
