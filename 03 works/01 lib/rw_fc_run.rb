@@ -1,7 +1,7 @@
 # coding: cp932
 
 # require 'pry-byebug'
-require 'H:\A\ruby\00 lib/log.rb'
+require 'H:/A/ruby/_github/03 works/01 lib/log.rb'
 
 class FC
   attr_reader :basename

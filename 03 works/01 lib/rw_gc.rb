@@ -1,6 +1,6 @@
 
 
-require 'H:\A\ruby\_github\03 works/rw_works.rb'
+require 'H:/A\ruby/_github/03 works/01 lib/rw_works.rb'
 
 def load_text(path = "#{Dir.pwd}/*.in")
   fns = Dir.glob(path)
@@ -12,3 +12,4 @@ def load_text(path = "#{Dir.pwd}/*.in")
   end
   a
 end
+

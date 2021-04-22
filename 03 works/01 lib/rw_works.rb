@@ -1,4 +1,5 @@
 
+# 新たにclassを作る必要はある？？
 class Gline < String
   def initialize(buf)
     self.replace buf
@@ -24,5 +25,29 @@ class Gline < String
       self[a.apf.x, a.apf.range] = a.value.to_s
     end
   end
+
+  def to_ol(apf)
+    base = self[apf.x - 1, apf.range]
+    value = []
+    apf.limit.times do |i|
+      b = self[(i * apf.size), apf.size].strip
+      value << b.to_i unless b.empty?
+    end
+    OL.new(apf, base, value)
+  end
 end
 
+# まとめる必要はある？？
+class OL
+  attr_reader :apf, :value, :base, :touch
+  def initialize(apf, base, value)
+    @apf = apf
+    @base = base
+    @value = value
+    @touch = 0
+  end
+
+  def include?(a)
+    self.value.include?(a)
+  end
+end

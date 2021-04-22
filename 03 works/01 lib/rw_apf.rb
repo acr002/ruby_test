@@ -57,7 +57,7 @@ def check_sno(apf)
   unless apf.include?(:SNO)
     h = Hash.new
     h[:key]     = :SNO
-    h[:x]       = 1
+    h[:x]       = 0
     h[:size]    = 5
     h[:limit]   = 1
     h[:comment] = 'SampleNo.'
