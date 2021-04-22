@@ -1,5 +1,5 @@
 
-def load_text(path = "#{Dir.pwb}/*.in")
+def load_text(path = "#{Dir.pwd}/*.in")
   fns = Dir.glob(path)
   a = []
   fns.each do |fn|
