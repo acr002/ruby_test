@@ -1,4 +1,7 @@
 
+require '../00 lib/rw_apf.rb'
+require './rw_fc.rb'
+
 gc = load_text
 apf = load_apf
 path = FC.new
