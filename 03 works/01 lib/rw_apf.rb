@@ -5,7 +5,7 @@
 # key‚Í‘å•¶š‚Ìsymbol‚Å‚·B
 
 class APF
-  attr_accessor :key, :x, :size, :cts, :limit, :type, :comment, :decimal, :range
+  attr_reader :key, :x, :size, :cts, :limit, :type, :comment, :decimal, :range
 
   def set_line(key, line)
     @key     = key
@@ -18,6 +18,19 @@ class APF
     @type    = line[34, 1].strip.upcase
     @decimal = line[56, 1].to_i if type == 'R'
     @range   = size * limit
+    self
+  end
+
+  def set_hash(h)
+    @key     = h[:key]     unless h[:key].nil?
+    @x       = h[:x]       unless h[:x].nil?
+    @size    = h[:size]    unless h[:size].nil?
+    @cts     = h[:cts]     unless h[:cts].nil?
+    @limit   = h[:limit]   unless h[:limit].nil?
+    @comment = h[:comment] unless h[:comment].nil?
+    @type    = h[:type]    unless h[:type].nil?
+    @decimal = h[:decimal] unless h[:decimal].nil?
+    @range   = h[:range]   unless h[:range].nil?
     self
   end
 end
@@ -42,16 +55,16 @@ end
 
 def check_sno(apf)
   unless apf.include?(:SNO)
-    a = APF.new
-    a.key     = :SNO
-    a.x       = 1
-    a.size    = 5
-    a.limit   = 1
-    a.comment = 'SampleNo.'
-    a.type    = 'R'
-    a.decimal = 0
-    a.range   = 5
-    apf[:SNO] = a
+    h = Hash.new
+    h[:key]     = :SNO
+    h[:x]       = 1
+    h[:size]    = 5
+    h[:limit]   = 1
+    h[:comment] = 'SampleNo.'
+    h[:type]    = 'R'
+    h[:decimal] = 0
+    h[:range]   = 5
+    apf[:SNO] = APF.new.set_hash(h)
   end
 end
 ################################
