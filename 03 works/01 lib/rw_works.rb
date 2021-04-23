@@ -2,7 +2,8 @@
 # 新たにclassを作る必要はある？？
 class Gline < String
   def initialize(buf)
-    self.replace buf
+    # self.replace buf
+    super
   end
 
   def fixer(apf)
@@ -51,3 +52,4 @@ class OL
     self.value.include?(a)
   end
 end
+
