@@ -23,24 +23,28 @@ class Log
   end
 
   def put_text(filename = "log(#{@name}).txt")
-    @head << %([end]   #{Time.now.strftime("%Y.%m.%d %H:%M:%S")})
-    @head << "[logs count] #{@cn}"
-    @head << @@hr
-    File.open(filename, 'w')do |f|
-      f.puts @head
-      f.puts ''
-      @a.each do |e|
-        f.puts e.map(&:to_s).join("\t")
+    unless @cn.zero?
+      @head << %([end]   #{Time.now.strftime("%Y.%m.%d %H:%M:%S")})
+      @head << "[logs count] #{@cn}"
+      @head << @@hr
+      File.open(filename, 'w')do |f|
+        f.puts @head
+        f.puts ''
+        @a.each do |e|
+          f.puts e.map(&:to_s).join("\t")
+        end
       end
     end
   end
 
   def put_csv(filename = "log(#{@name}).csv")
-    header = (1..@max_el).map{|e| "el_#{e}"}
-    header.unshift('seq')
-    CSV.open(filename, 'w') do |csv|
-      csv.puts header
-      @a.each{|e| csv.puts e}
+    unless @cn.zero?
+      header = (1..@max_el).map{|e| "el_#{e}"}
+      header.unshift('seq')
+      CSV.open(filename, 'w') do |csv|
+        csv.puts header
+        @a.each{|e| csv.puts e}
+      end
     end
   end
 end

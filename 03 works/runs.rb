@@ -36,5 +36,27 @@ c = a.ljust(n)[0, n]
 p a, b, c
 ################################
 
+class NewString < String
+  def initialize(buf)
+    self.replace buf
+  end
+end
+a = NewString.new('test data')
+p a
+################################
 
+class Hash
+  def x(apf, *a)
+    a.each do |e|
+      self[e] = apf[e]
+    end
+    self
+  end
+end
+
+h = {}
+apf = {a: [1, 2], b: [1, 3], c: [1, 4]}
+h.x(apf, :a, :b)
+p h
+################################
 
