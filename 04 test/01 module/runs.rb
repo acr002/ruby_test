@@ -1,10 +1,6 @@
 
 
 
-module Fixer
-end
-
-
 module Car
   class SuperCar
     def self.introduce
