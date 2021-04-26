@@ -21,11 +21,7 @@ def put_json_pg(path, h)
   end
 end
 
-# csv‚©‚çhash‚ÉB
 h = csv_hash('sample.csv')
-
-# hash‚©‚çjson‚ÉB
 put_json_pg('result.json', h)
-
 # puts JSON.pretty_generate(h)
 
