@@ -1,0 +1,26 @@
+{
+  "S01": {
+    "key": "S01",
+    "type": "S",
+    "x": 11,
+    "size": 1,
+    "cts": 5,
+    "comment": "Q01"
+  },
+  "S02": {
+    "key": "S02",
+    "type": "M",
+    "x": 12,
+    "size": 2,
+    "cts": 12,
+    "comment": "Q02"
+  },
+  "S03": {
+    "key": "S03",
+    "type": "S",
+    "x": 27,
+    "size": 1,
+    "cts": 3,
+    "comment": "Q03"
+  }
+}

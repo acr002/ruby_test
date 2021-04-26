@@ -1,0 +1,5 @@
+mail_from: tamada@across-net.co.jp
+mail_subject: Œ–¼‚ª‚±‚±‚É“ü‚è‚Ü‚·
+mail_from_address: smtp.alpha-prm.jp
+mail_user_name: tamada%across-net.co.jp
+mail_password: password
