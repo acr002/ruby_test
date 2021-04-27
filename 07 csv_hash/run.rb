@@ -18,6 +18,12 @@ def csv_hash(path, x_key = 1, x_value = 2)
   a.each do |row|
     h[row[xk].to_sym] = row[xv]
   end
+  # valueをすべて配列に持つ場合は下記を使用してください。
+  # 重複分も保持します。array.first, array.lastにて優先を決めても良いかもしれません。
+  # a.each do |row|
+  #   h[row[xk].to_sym] ||= Array.new
+  #   h[row[xk].to_sym] << row[xv]
+  # end
   h
 end
 
