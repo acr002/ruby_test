@@ -1,0 +1,34 @@
+
+col, key: 'SNO', x: 1, at_size: 5, limit: 1, comment: 'SampleNo.'
+
+# hashを渡す場合
+h = Hash.new
+h[:key] = 'SNO'
+h[:x] = 1
+h[:at_size] = 5
+h[:limit] = 1
+h[:comment] = 'SampleNo.'
+apf.add_apf(h)
+
+# apfオブジェクトを渡す場合
+a = APF.new
+a.key = 'SNO'
+a.x = 1
+a.at_size = 5
+a.limit = 1
+a.comment = 'SampleNo.'
+apf.add_apf(a)
+=begin
+apfはhash
+そのコンテナに新たにapfを追加したい。
+
+keyとなる問Noで指定するのが一番楽？
+a = gc[:S01]
+a.apf.x
+a.value
+a.base    (これは外部からはいじれないようにすべき)
+a.touch
+
+
+
+
