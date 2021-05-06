@@ -3,8 +3,13 @@ class SFdata
   # apfs
   # line
   # values
+  def initialize
+    @log = Log.new('main')
+  end
+
   def self.set_line(line)
     @@line = line
+    @@base = line
   end
 
   def self.load_apf(path)
@@ -18,6 +23,14 @@ class SFdata
 
       end
     end
+  end
+
+  def v(key)
+    @hs[key]
+  end
+
+  def clear_hs
+    @hs = Hash.new
   end
 end
 
