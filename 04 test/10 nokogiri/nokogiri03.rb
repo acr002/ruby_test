@@ -4,11 +4,26 @@
 require 'open-uri'
 require 'nokogiri'
 
-url = 'http://curazy.com/archives/6493'
+url = 'https://curazy.com/archives/6493'
 
-carset = nil
-html = open(url) do |f|
-  carset = f.charset
+page = Nokogiri::HTML.parse(OpenURI.open_uri(url))
+# shuzo_meigen = page.search('p')
+# p shuzo_meigen.text
+
+# p page.search('h1').text
+# p page.search('h2').text
+page.css('h1').each do
+  p _1.content
+end
+
+
+
+
+
+__END__
+charset = nil
+html = OpenURI.open_uri(url) do |f|
+  charset = f.charset
   f.read
 end
 
