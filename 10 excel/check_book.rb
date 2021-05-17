@@ -3,7 +3,7 @@
 require 'csv'
 require 'win32ole'
 
-def error_value?(a, sign, b)
+def istrue?(a, sign, b)
   case sign
   when '<'
     a < b
@@ -17,8 +17,18 @@ def error_value?(a, sign, b)
     a == b
   when '<>'
     a != b
+  else
+    p "#{sign}はありません".encode('utf-8')
   end
 end
+
+h_sign = {}
+h_sign['<']  = 'より大きくなるよう'
+h_sign['>']  = 'より小さくなるよう'
+h_sign['<='] = 'と同数または大きくなるよう'
+h_sign['>='] = 'と同数または小さくなるよう'
+h_sign['=']  = 'と同数になるよう'
+h_sign['<>'] = 'と同数にならないよう'
 
 # 参考
 =begin
@@ -46,11 +56,11 @@ fns.each do |fn|
     sign = ec['sign']
     total = tar[x_total].to_i
     part = tar[x_part].to_i
-    if error_value?(total, sign, part)
+    unless istrue?(total, sign, part)
       ar << "・設問: #{ec['sec_t']}と#{ec['sec_p']}(「#{ec['block1']} #{ec['block2']}」#{ec['sec_text_t']}と#{ec['sec_text_p']})"
       ar << "・回答: #{ec['sec_t']} = [#{total}]"
       ar << "　　　  #{ec['sec_p']} = [#{part}]"
-      ar << "・確認: 「#{ec['sec_p']}」は「#{ec['sec_t']}」と同数またはそれ以上になるようにご回答ください。"
+      ar << "・確認: 「#{ec['sec_p']}」は「#{ec['sec_t']}」#{h_sign[sign]}にご回答ください。"
       ar << hr
     end
   end
