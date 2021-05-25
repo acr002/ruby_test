@@ -1,21 +1,18 @@
+# coding: cp932
 
-hr = '-' * 24
-a = 'xbbb-xbbb-abbb'
-b = /x/
-p a, b
-p hr
-# p a.gsub(b){|e| "a#{e}c" }
-# p a.gsub(b){"<p>#{_1}</p>"}
-# p a.gsub(b){|e| "<p>#{e}</p>"}
+# どうやらRegexp.unionなら配列の文字列を選択|で連結してRegexpとして返してくれるようなので
+# Hashのkeyをvalueに変換するなら下記のように書けるようです。
+# もっとキレイなやり方があるような気もしますが。。
 
-c = a.gsub(b) do |e|
-  'y'
-end
-p c
+Regexp.unionで配列の文字列を選択|で連結してRegexpとして返してくれるようなので
+Hashを使って、keyをvalueに置き換えるのなら下記のように書けるようです。
+もっとキレイなやり方があるような気もしますが。。
 
-# b = /(\w+)/
-#=> "<p>xbbb</p>-<p>xbbb</p>-<p>abbb</p>"
-# b = /(\w+)?/
-#=> "<p>xbbb</p><p></p>-<p>xbbb</p><p></p>-<p>abbb</p><p></p>"
-################################
+
+h = {}
+h["hoge"] = '私'
+h["ruby"] = '金持ちに'
+h["です"] = 'なります!!'
+p "hogeはrubyです".gsub(Regexp.union(h.keys), h).encode('utf-8')
+
 
