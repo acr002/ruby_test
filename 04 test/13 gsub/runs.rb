@@ -57,6 +57,36 @@ b = Regexp.union(a)
 p a, b
 ################################
 
+a = 'test data in ruby'
+b = %w(es da ta)
+c = a.gsub(Regexp.union(b), '-')
+p a, b, c
+################################
+
+# method‚ğì‚Á‚Ä‚İ‚Ü‚µ‚½B
+class Hash
+  def gs(a)
+    a.gsub(Regexp.union(self.keys), self)
+  end
+end
+
+class String
+  def gs(h)
+    self.gsub(Regexp.union(h.keys), h)
+  end
+end
+
+a = 'test data in ruby'
+h = {}
+h['es'] = '1'
+h['da'] = '2'
+h['ta'] = 'x'
+# c = a.gsub(Regexp.union(h.keys), h)
+c = h.gs(a)
+d = a.gs(h)
+p a, h, c, d
+################################
+
 
 
 
