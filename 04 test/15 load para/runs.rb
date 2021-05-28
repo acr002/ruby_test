@@ -39,6 +39,67 @@ p a
 # ["a", "b", "c"]
 ################################
 
+a = 'include?(2).value(3)'
+b = a.match(/([^\(]+)\(([^\)]+)\)/)
+p a, b, *b
+################################
+
+a = 'include?(2).value(3)'
+b = a.scan(/([^\(]+)\(([^\)]+)\)/)
+p a, b
+b.each do |e|
+  p e
+end
+################################
+
+pat = /([^\(]+)\(([^\)]+)\)/
+a = 'include?(2).value(3)'.split('.')
+a.each do |b|
+  c = b.scan(pat).flatten
+  p "#{c.first}: [#{c[1]}]"
+end
+################################
+
+# メソッドチェーンにおいて、レシーバとメソッドを分けます。
+# Hashに格納し、keyにレシーバを入れ、valueに配列にしたメソッドを入れています。
+pat = /([^\(]+)\(([^\)]+)\)/
+a = 'a(s01).include?(2).value(3)'
+els = a.split('.')
+h = {}
+t = els.shift
+h[t] = els
+p h
+################################
+
+# メソッド名と引数を分割します。
+def method_arg(a)
+  pat = /([^\(]+)\(([^\)]+)\)/
+  a.scan(pat).flatten
+end
+
+a = 'a(s01).include?(2).value(3)'
+els = a.split('.')
+h = {}
+els.each do |e|
+  a = method_arg(e)
+  h[a.first] = a[1]
+end
+p h
+################################
+
+# Array#delete  !はいりません。破壊的メソッドです。
+h = {s01: [1, nil, 2, nil, 3, nil, 5]}
+p h
+h[:s01].delete(2)
+p h
+h[:s01].delete(nil)
+p h
+################################
+
+
+
+
+
 
 
 

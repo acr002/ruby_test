@@ -1,9 +1,19 @@
 
-a = 'include?(2).value(3)'
-b = a.match(/([^\(]+)\(([^\)]+)\)/)
-p a, b, *b
-################################
 
+h = {}
+h[:line][:block][:para][:receiver]
+                [:para][:method]
+                [:para][:arg]
+                [:result] = true / false
+                [:type] = if, unless, log, do
+                [:must] = true / false
+
+
+
+
+
+
+################################
 
 
 
