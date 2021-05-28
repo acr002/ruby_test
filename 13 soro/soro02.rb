@@ -10,14 +10,14 @@ end
 # __END__
 
 loop do
-  a = rand(4..8)
+  a = rand(4..11)
   b = 10 ** a
   puts delimited(rand(b))
   puts 'exit: num'
   st = Time.now
   rr = gets.to_i
   if rr.zero?
-    puts "time #{Time.now - st}s"
+    # puts "time #{Time.now - st}s"
   else
     break
   end
