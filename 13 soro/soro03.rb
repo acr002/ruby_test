@@ -14,10 +14,10 @@ end
 
 log = Array.new
 ans = 0
-b = 4
-log.puts_add("#{b}.times puts")
+loop_count = 4
+log.puts_add("#{loop_count}.times puts")
 start_time = Time.now
-b.times do |i|
+loop_count.times do |i|
   a = rand(100)
   ans += a
   # puts delimited(a)

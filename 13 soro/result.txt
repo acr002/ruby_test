@@ -1,0 +1,20 @@
+4.times puts
+   90
+   89
+    1
+   49
+time: 13.3353334s
+your ans: 229
+calc ans: 229
+result:   ok
+------------------------
+4.times puts
+   55
+   52
+    3
+   67
+time: 20.0090007s
+your ans: 177
+calc ans: 177
+result:   ok
+------------------------
