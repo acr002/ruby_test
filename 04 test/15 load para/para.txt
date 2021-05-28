@@ -1,0 +1,4 @@
+if S01.include?(1), unless S01.include?(1), set S01(1), log 01 set and clear
+
+
+
