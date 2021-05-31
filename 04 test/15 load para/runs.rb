@@ -96,7 +96,56 @@ h[:s01].delete(nil)
 p h
 ################################
 
+a = %w(if MUST S02.include?(2))
+p a
+p a.map(&:downcase).include?('must')
 
+b = %w(do s01.delete(1))
+p b
+p b.include?('must')
+################################
+
+# String > Range > Array
+a = '2..4'
+b = a.split('..').map(&:to_i)
+c = Range.new(b.first, b.last)
+ar = c.to_a
+p a, b, c, ar
+################################
+
+# argsの区切りはどうすべきか。
+# 下記はアンスコ(_)の例。
+c = '1_3_8'
+if c.include?('_')
+  ar = c.split('_').map(&:to_i)
+  p ar
+end
+################################
+
+# typeとmustとmethodを分割します。
+def analysis_block(buf)
+  h = {}
+  a = buf.split
+  h[:type] = a.shift
+  if a.map(&:downcase).include?('must')
+    h[:must] = true
+    a.delete('must')
+  end
+  h[:method] = a.join(' ')
+  h
+end
+
+# a = 'if must S02.include?(1 2 3)'
+# a = 'if  S02.include?(1 2 3) must'
+a = 'if  S02.include?(1 2 3)'
+h = analysis_block(a)
+p h
+if h[:must]
+  p 'must!!'
+else
+  p 'not must'
+end
+################################
 
 
 

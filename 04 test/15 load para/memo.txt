@@ -5,5 +5,12 @@
   block[1..]    メイン指示に対する具体的な処理。値を扱う、ログのファイル名、bool型だったり。
 (el)      
 
+h = {}
+h[:line][:block][:para][:receiver]
+                [:para][:method]
+                [:para][:arg]
+                [:result] = true / false
+                [:type] = if, unless, log, do
+                [:must] = true / false
 
 
