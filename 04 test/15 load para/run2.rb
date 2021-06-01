@@ -3,19 +3,19 @@ def call_method(receiver, method, arg)
   # a = arg.to_i
   case method
   when 'include?'
-    receiver.include?(a)
+    receiver.include?(arg.first)
   when 'add'
-    receiver << a
+    receiver << arg.first
   when 'delete'
-    receiver.delete(a)
+    receiver.delete(arg.first)
   when 'clear'
     receiver.clear
   when '+', 'calc+'
-    [receiver.first + arg]
+    [receiver.first + arg.first]
   when '-', 'calc-'
-    [receiver.first - arg]
+    [receiver.first - arg.first]
   when '*', 'calc*'
-    [receiver.first * arg]
+    [receiver.first * arg.first]
   end
 end
 
