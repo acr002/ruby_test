@@ -1,6 +1,6 @@
 
 
-def call_mathod(receiver, method, arg)
+def call_method(receiver, method, arg)
   a = arg.to_i
   case method
   when 'include?'
@@ -11,6 +11,12 @@ def call_mathod(receiver, method, arg)
     receiver.delete(a)
   when 'clear'
     receiver.clear
+  when '+', 'calc+'
+    [receiver.first + arg]
+  when '-', 'calc-'
+    [receiver.first - arg]
+  when '*', 'calc*'
+    [receiver.first * arg]
   end
 end
 
@@ -24,8 +30,6 @@ def method_arg(a)
   if c.include?(' ')
     ar = c.split.map(&:to_i)
   end
-
-
 end
 ################################
 
@@ -38,7 +42,7 @@ a.each do |meth|
   cn += 1
   method, arg = method_arg(meth)
   # p method, arg
-  receiver = call_mathod(receiver, method, arg)
+  receiver = call_method(receiver, method, arg)
   p "#{cn} #{receiver}"
 end
 
