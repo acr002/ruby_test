@@ -23,6 +23,7 @@ def method_arg(a)
   pat = /([^\(]+)\(([^\)]+)\)/
   b, c = a.scan(pat).flatten
   # c = [] if c.nil?
+  # cにはスペース区切りで複数項目あるかもしれないので、splitが必要です。
   ar = []
   if c.match?(/[0-9]+/)
     ar << c.to_i
