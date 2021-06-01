@@ -1,2 +1,4 @@
+if S02.include?(1), unless S01.include?(1), set S01(1), log 01 set and clear
 
-A.sum(S01 S02 S03), F01.put(A)
+
+
