@@ -73,4 +73,21 @@ a = '3 4..6 S01 S02'
 p load_arg(a)
 
 # p Values.hv('S01')
+################################
+
+a = '      log     01 set and clear'
+b = a.split
+if b.first == 'log'
+  c = b[1..nil].join(' ')
+  p "[log] filename: #{c}.csv"
+else
+  c = a
+end
+p c
+################################
+
+
+
+
+
 
