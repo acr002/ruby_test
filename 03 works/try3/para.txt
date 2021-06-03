@@ -1,2 +1,9 @@
 
 A.sum(S01 S02 S03), F01.put(A)
+if must S01.include?(1), FS1.put(1)
+if FS1.include?(1), unless S02.empty?, S02.delete
+
+
+
+
+
