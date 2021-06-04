@@ -63,7 +63,7 @@ def sep_method_arg(arg)
     var = []
   end
   h = {}
-  h[:method] = b.strip.downcase
+  h[:method] = b.to_s.strip.downcase
   h[:arct] = arct
   h[:arg_var] = var
   h
@@ -77,8 +77,8 @@ def load_arg(arg)
   ar = []
   var = []
   a.each do |b|
-    if b.include?('..')
-      c = b.split('..')
+    if b.include?('~')
+      c = b.split('~')
       ar.concat(Range.new(c.first, c.last).to_a.map(&:to_f))
     else
       if b.match?(/\A[0-9]+\z/)
@@ -94,7 +94,7 @@ end
 fc = load_parameter
 pp fc
 __END__
-a = 'A.add(S01), if S02.include?(1..3), unless S01.include?(1), F01.add(1), log 01 flag'
+a = 'A.add(S01), if S02.include?(1~3), unless S01.include?(1), F01.add(1), log 01 flag'
 h = load_blocks(a.split(','))
 p a
 p h.class

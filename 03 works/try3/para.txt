@@ -1,8 +1,9 @@
 
 A.sum(S01 S02 S03), F01.put(A)
-if must S01.include?(1), FS1.put(1)
+if S01.include?(1), FS1.put(1 3~5)
 if FS1.include?(1), unless S02.empty?, S02.delete
 if M01.include?(1), CT1(R01).table(table01)
+if S01.include?(1), B(R01).+(1).-(5).*(10), RS1.add(B)
 
 
 

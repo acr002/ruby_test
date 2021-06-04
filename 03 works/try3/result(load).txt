@@ -1,4 +1,7 @@
 H:\A\ruby\_github\03 works\try3>ruby w1_load_para.rb
+
+
+A.sum(S01 S02 S03), F01.put(A)
 [[{:type=>:do,
    :method_base=>"A.sum(S01 S02 S03)",
    :receiver=>{:method=>"a", :arct=>[], :arg_var=>[]},
@@ -7,14 +10,21 @@ H:\A\ruby\_github\03 works\try3>ruby w1_load_para.rb
    :method_base=>"F01.put(A)",
    :receiver=>{:method=>"f01", :arct=>[], :arg_var=>[]},
    :methods=>[{:method=>"put", :arct=>[], :arg_var=>["A"]}]}],
+
+if S01.include?(1), FS1.put(1 3..5)
  [{:type=>:if,
-   :method_base=>"must S01.include?(1)",
-   :receiver=>{:method=>"must s01", :arct=>[], :arg_var=>[]},
+   :method_base=>"S01.include?(1)",
+   :receiver=>{:method=>"s01", :arct=>[], :arg_var=>[]},
    :methods=>[{:method=>"include?", :arct=>[1.0], :arg_var=>[]}]},
   {:type=>:do,
-   :method_base=>"FS1.put(1)",
+   :method_base=>"FS1.put(1 3..5)",
    :receiver=>{:method=>"fs1", :arct=>[], :arg_var=>[]},
-   :methods=>[{:method=>"put", :arct=>[1.0], :arg_var=>[]}]}],
+   :methods=>
+    [{:method=>"", :arct=>[], :arg_var=>[]},
+     {:method=>"", :arct=>[], :arg_var=>[]},
+     {:method=>"5)", :arct=>[], :arg_var=>[]}]}],
+
+if FS1.include?(1), unless S02.empty?, S02.delete
  [{:type=>:if,
    :method_base=>"FS1.include?(1)",
    :receiver=>{:method=>"fs1", :arct=>[], :arg_var=>[]},
@@ -27,6 +37,8 @@ H:\A\ruby\_github\03 works\try3>ruby w1_load_para.rb
    :method_base=>"S02.delete",
    :receiver=>{:method=>"s02", :arct=>[], :arg_var=>[]},
    :methods=>[{:method=>"delete", :arct=>[], :arg_var=>[]}]}],
+
+if M01.include?(1), CT1(R01).table(table01)
  [{:type=>:if,
    :method_base=>"M01.include?(1)",
    :receiver=>{:method=>"m01", :arct=>[], :arg_var=>[]},
@@ -34,6 +46,22 @@ H:\A\ruby\_github\03 works\try3>ruby w1_load_para.rb
   {:type=>:do,
    :method_base=>"CT1(R01).table(table01)",
    :receiver=>{:method=>"ct1", :arct=>[], :arg_var=>["R01"]},
-   :methods=>[{:method=>"table", :arct=>[], :arg_var=>["table01"]}]}]]
+   :methods=>[{:method=>"table", :arct=>[], :arg_var=>["table01"]}]}],
 
-H:\A\ruby\_github\03 works\try3>
+if S01.include?(1), B(R01).+(1).-(5).*(10), RS1.add(B)
+ [{:type=>:if,
+   :method_base=>"S01.include?(1)",
+   :receiver=>{:method=>"s01", :arct=>[], :arg_var=>[]},
+   :methods=>[{:method=>"include?", :arct=>[1.0], :arg_var=>[]}]},
+  {:type=>:do,
+   :method_base=>"B(R01).+(1).-(5).*(10)",
+   :receiver=>{:method=>"b", :arct=>[], :arg_var=>["R01"]},
+   :methods=>
+    [{:method=>"+", :arct=>[1.0], :arg_var=>[]},
+     {:method=>"-", :arct=>[5.0], :arg_var=>[]},
+     {:method=>"*", :arct=>[10.0], :arg_var=>[]}]},
+  {:type=>:do,
+   :method_base=>"RS1.add(B)",
+   :receiver=>{:method=>"rs1", :arct=>[], :arg_var=>[]},
+   :methods=>[{:method=>"add", :arct=>[], :arg_var=>["B"]}]}]]
+
