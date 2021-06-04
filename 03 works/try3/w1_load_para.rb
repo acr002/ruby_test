@@ -1,8 +1,6 @@
 
 require 'pp'
-
 # parameterファイルを読み込んで、fc hashを返します。
-
 # load(parameter)
 def load_parameter
   fc = []
@@ -63,9 +61,9 @@ def sep_method_arg(arg)
     var = []
   end
   h = {}
-  h[:method] = b.to_s.strip.downcase
+  h[:body] = b.to_s.strip.downcase
   h[:arct] = arct
-  h[:arg_var] = var
+  h[:var] = var
   h
 end
 
@@ -77,12 +75,18 @@ def load_arg(arg)
   ar = []
   var = []
   a.each do |b|
+    # a~zのaとzはそれぞれ整数のみ対応
+    # 配列の中にRangeオブジェクトを入れるのは可能。。。
     if b.include?('~')
       c = b.split('~')
-      ar.concat(Range.new(c.first, c.last).to_a.map(&:to_f))
+      ar.concat(Range.new(c.first, c.last).to_a.map(&:to_i))
     else
-      if b.match?(/\A[0-9]+\z/)
-        ar << b.to_f
+      if b.match?(/\A\d/)
+        if b.match?(/_/)
+          ar << b.gsub('_', '.').to_f
+        else
+          ar << b.to_i
+        end
       else
         var << b
       end
@@ -92,16 +96,10 @@ def load_arg(arg)
 end
 
 fc = load_parameter
-pp fc
-__END__
-a = 'A.add(S01), if S02.include?(1~3), unless S01.include?(1), F01.add(1), log 01 flag'
-h = load_blocks(a.split(','))
-p a
-p h.class
-puts h
-
-
-'if M01.include?(1), CT1(R01).table(table01)'
+File.open('result.txt', 'w') do |f|
+  f.puts fc.pretty_inspect
+end
+# pp fc
 
 
 
