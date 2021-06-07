@@ -1,25 +1,30 @@
 #-----------------------------------------------------------[date: 2021.06.07]
 
-require 'pp'
+# require 'pp'
 # parameterファイルを読み込んで、fc hashを返します。
 # load(parameter)
 def load_parameter
+  tables = {}
   fc = []
   para_fns = Dir.glob('para*.txt')
   para_fns.each do |fn|
-    puts "load file: #{fn}"
-    cn = 0
+    # puts "load file: #{fn}"
+    # cn = 0
     File.foreach(fn) do |line|
-      next if line.empty?
-      next if line[0] == '#'
-      next if line.strip.empty?
-      cn = cn + 1
-      blocks = line.split(',')
-      fc << load_blocks(blocks)
+      a = line.strip
+      next if a.empty?
+      next if a.start_with?('#')
+      if a.start_with?('table')
+        load_table(tables, a)
+      else
+        # cn = cn + 1
+        blocks = line.split(',')
+        fc << load_blocks(blocks)
+      end
     end
-    puts "count: #{cn} blocks"
+    # puts "count: #{cn} blocks"
   end
-  fc
+  [fc, tables]
 end
 
 def load_blocks(blocks)
@@ -46,6 +51,31 @@ def load_blocks(blocks)
     h[:methods] = a
     h
   end
+end
+
+def to_num(buf)
+  if buf.empty?
+    nil
+  else
+    if buf.match?('\.')
+      buf.to_f
+    else
+      buf.to_i
+    end
+  end
+end
+
+def load_table(tables, line)
+  a = line.split(',').map(&:strip)
+  h = {}
+  # h[:name] = a[0]
+  h[:a]  = to_num(a[1])
+  h[:z]  = to_num(a[2])
+  h[:ct] = to_num(a[3])
+  h[:log] = a[4]
+  h[:range] = Range.new(h[:a], h[:z])
+  tables[a[0]] ||= []
+  tables[a[0]] << h
 end
 
 def load_method(base)
@@ -103,7 +133,39 @@ def load_arg(arg)
   [ar, var]
 end
 
-fc = load_parameter
+def set_var(vars, v)
+  unless v.start_with?('table')
+    vars[v] = [] unless vars.include?(v)
+  end
+end
+
+def pickup_var(fc)
+  vars = {}
+  fc.each do |block|
+    block.each do |el|
+      set_var(vars, el[:receiver][:body])
+      el[:receiver][:var].each do |v|
+        set_var(vars, v)
+      end
+      el[:methods].each do |e|
+        e[:var].each do |v|
+          set_var(vars, v)
+        end
+      end
+    end
+  end
+  vars
+end
+################################
+
+__END__
+fc, tables = load_parameter
+vars = pickup_var(fc)
+p vars.size
+pp vars
+p '-' * 36
+pp tables
+
 File.open('result.txt', 'w') do |f|
   f.puts fc.pretty_inspect
 end

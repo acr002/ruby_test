@@ -5,6 +5,18 @@ if FS1.include?(1), unless S02.empty?, S02.delete
 if M01.include?(1), CT1(R01).table(table01)
 if S01.include?(1), B(R01).+(1).-(5).*(10), RS1.add(B)
 
+table01, 1, 1, 1
+table01, 2, 2, 2
+table01, 3, 3, 3
+table01, 4, 4, 4
+table01, 5,  , 5
+table01,  , 0,  , NA
+
+table2,  0,  5, 1
+table2,  6, 10, 2
+table2, 11, 15, 3
+table2, 16,   , 4, check value
+
 
 
 
