@@ -1,6 +1,7 @@
 #-----------------------------------------------------------[date: 2021.06.07]
 
-require 'H:/lib/works/main.rb'
+# require 'H:/lib/works/main.rb'
+require 'H:/A/ruby/_github/03 works/try3/lib/main.rb'
 require 'pp'
 
 fc = load_files
