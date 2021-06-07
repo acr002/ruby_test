@@ -1,3 +1,4 @@
+#-----------------------------------------------------------[date: 2021.06.07]
 
 require 'pp'
 # parameterファイルを読み込んで、fc hashを返します。
@@ -6,13 +7,17 @@ def load_parameter
   fc = []
   para_fns = Dir.glob('para*.txt')
   para_fns.each do |fn|
+    puts "load file: #{fn}"
+    cn = 0
     File.foreach(fn) do |line|
       next if line.empty?
       next if line[0] == '#'
       next if line.strip.empty?
+      cn = cn + 1
       blocks = line.split(',')
       fc << load_blocks(blocks)
     end
+    puts "count: #{cn} blocks"
   end
   fc
 end
@@ -61,14 +66,17 @@ def sep_method_arg(arg)
     var = []
   end
   h = {}
-  h[:body] = b.to_s.strip.downcase
+  # h[:body] = b.to_s.strip.downcase
+  h[:body] = b.to_s.strip
   h[:arct] = arct
   h[:var] = var
   h
 end
 
-# 引数の内、数字のものはto_f
-# 引数がInteger(float)かStringかで
+# 数値の中で、_(小数を表す)が含まれていたらFloat、
+# それ以外の数字はIntegerにします。
+# 文字列は全てvarととらえてStringで保持します。
+# arctには数値のみ、varは文字列のみ格納します。
 def load_arg(arg)
   return [[], []] if arg.nil?
   a = arg.split
