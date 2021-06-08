@@ -158,7 +158,42 @@ p b.empty?
 p a, b
 ################################
 
+class Array
+  def include_any?(b)
+    b.any? do |e|
+      self.include?(e)
+    end
+  end
+end
+# any? すべての要素が偽である場合にfalseを返します。ひとつでも真があればただちにtrueを返します。
+a = [1, 3, 5, 6, 8]
+b = [2, 4, 8]
+# p a.include?(*b)
+# c = b.any? do |e|
+#   a.include?(e)
+# end
+# p c
+p a.include_any?(b)
+################################
 
+# Array#-は破壊的ではありません。
+# 基準(レシーバ(左にあるもの))を元に新たな配列を作ります。
+a = [1, 3, 5]
+b = [2, 5]
+p a - b
+p b - a
+p a, b
+################################
+
+def other?(ar, a)
+  !((ar - a).empty?)
+end
+a = [1, 3, 5]
+b = [3, 5]
+c = [1, 3, 5]
+p other?(a, b)
+p other?(a, c)
+################################
 
 
 
