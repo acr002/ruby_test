@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.07]
+#-----------------------------------------------------------[date: 2021.06.08]
 
 require 'H:/A/ruby/_github/03 works/try3/lib/load_apf.rb'
 require 'H:/A/ruby/_github/03 works/try3/lib/load_para.rb'
@@ -11,24 +11,34 @@ def load_files
   fc
 end
 
+def cc_receiver(ol, receiver)
+  ol[receiver[:body]] = cc_arg(ol, receiver)
+end
+
+# arctと値にしたvarを一つにします。
 def cc_arg(ol, method)
-  ar = []
-  method[:arct].each do |e|
-    ar << e
-  end
+  ar = method[:arct].dup
   method[:var].each do |e|
-    ar.concat(ol[e])
+    if ol.include?(e)
+      ar << ol[e]
+    else
+      puts "cc_arg: olに[#{e}]がありません。".encode('utf-8')
+    end
   end
-  ar
+  ar.uniq
 end
 
 def cc_method(ol, block)
+  # receiverのarctやvarが指定されていた場合、置き換える？追加する？
+  # 代入とするならば置き換えがわかりやすい？
+  # argが複数指定されていたらどうする？
   receiver = ol[block[:receiver].body]]
   # 引数(var)の変数展開をし、引数を一つにします。
+  arg = cc_arg(ol, method)
   block[:methods].each do |method|
     case ol[method[:body]]
     when 'include?'
-      receiver.include?(*cc_arg(ol, method))
+      receiver.include?(*arg)
     when 'include_all?'
     when 'other?'
     when 'same?'
