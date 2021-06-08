@@ -19,8 +19,9 @@ end
 def cc_arg(ol, method)
   ar = method[:arct].dup
   method[:var].each do |e|
+    # 理論的にはolにないvarはないはずです。
     if ol.include?(e)
-      ar << ol[e]
+      ar.concat(ol[e].value)
     else
       puts "cc_arg: olに[#{e}]がありません。".encode('utf-8')
     end
@@ -84,10 +85,13 @@ end
 def cc_works(fc)
   fc[:para].each do |blocks|
     blocks.each do |block|
+      # receiverとmethodsの評価をします。
+      result = cc_method(fc[:ol], block)
+      # その結果を使ってtype毎に評価します。この評価によって次に進むか、このlinerを終了させるかを決めます。
       case block[:type]
       when :if
       when :unless
-      when :do
+      # when :do    # doは必要ありません。すでにolは変更されています。
       end
     end
   end
