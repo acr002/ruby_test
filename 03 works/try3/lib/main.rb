@@ -77,12 +77,11 @@ def cc_method(ol, block)
     when 'rand'
     when 'reverse'
     when 'range'
+    end
   end
 end
 
-def works(fc, line)
-  vars = pickup_var(fc)
-  fc[:ol] = set_ol(fc, vars, line)
+def cc_works(fc)
   fc[:para].each do |blocks|
     blocks.each do |block|
       case block[:type]
@@ -92,7 +91,12 @@ def works(fc, line)
       end
     end
   end
-  retouch(fc[:ol], line)
+end
+
+def works(fc)
+  set_ol(fc)
+  cc_works(fc)
+  retouch(fc)
 end
 
 

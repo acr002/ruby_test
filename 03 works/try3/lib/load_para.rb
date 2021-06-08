@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.07]
+#-----------------------------------------------------------[date: 2021.06.08]
 
 # require 'pp'
 # parameterファイルを読み込んで、fc hashを返します。
@@ -138,25 +138,6 @@ def set_var(vars, v)
     vars[v] = [] unless vars.include?(v)
   end
 end
-
-def pickup_var(fc)
-  vars = {}
-  fc.each do |block|
-    block.each do |el|
-      set_var(vars, el[:receiver][:body])
-      el[:receiver][:var].each do |v|
-        set_var(vars, v)
-      end
-      el[:methods].each do |e|
-        e[:var].each do |v|
-          set_var(vars, v)
-        end
-      end
-    end
-  end
-  vars
-end
-################################
 
 __END__
 fc, tables = load_parameter
