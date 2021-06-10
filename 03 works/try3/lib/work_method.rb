@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.08]
+#-----------------------------------------------------------[date: 2021.06.10]
 
 class Array
   def include_any?(b)
@@ -69,6 +69,32 @@ class Array
       self.delete(e)
     end
   end
+
+  # table情報が必要なのでfcを引数でとります。
+  def table(arg)
+    ar = []
+    self.map do |e|
+      if fc[:table].include?(arg.first)
+        fc[:table][arg.first].each do |tb|
+          if tb[:range].include?(e)
+            ar << tb[:ct]
+            break
+          end
+        end
+      end
+    end
+    ar
+  end
+
+  def median
+    a = self.sort
+    if a.size.even?
+      # 中央の二つを足してに2で割る方式
+      [a[(a.size / 2) - 1, 2].sum / 2.0]
+    else
+      [a[a.size / 2]]
+    end
+  end
 end
 # nil?は組込みを使います。レシーバがnilかどうか。
 # 配列内がnilのみかどうかはhas_nil?を使います。
@@ -85,11 +111,11 @@ end
 # p a.count?(b)
 # a = [99999, 1]
 # p a.all9?(5)
-a = [1, 3, 5, 10]
-b = [2, 3, 5]
-p a, b
-p a.delete_ar(b)
-p a, b
+# a = [1, 3, 5, 10]
+# b = [2, 3, 5]
+# p a, b
+# p a.delete_ar(b)
+# p a, b
 
 
 

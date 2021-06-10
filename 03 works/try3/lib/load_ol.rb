@@ -1,17 +1,17 @@
-#-----------------------------------------------------------[date: 2021.06.08]
+#-----------------------------------------------------------[date: 2021.06.10]
 
 class OL
-  attr_reader :key, :value, :base, :on_change, :apf
+  attr_reader :key, :base, :apf
+  attr_accessor :value
   def initialize(key)
     @key = key
     @value = []
     @base = []
-    @on_change = false
     @apf = nil
     self
   end
 
-  # @keyと@on_changeはnewの段階で入れたものを使います。
+  # @keyはnewの段階で入れたものを使います。
   def set(line, apf)
     @value = []
     apf.limit.times do |i|
@@ -28,14 +28,6 @@ end
 # olのベースとなるvar(変数)を集めます。
 # レシーバもvarに含めて考えます。
 # table以外を対象としています。
-# fc[:para][][:type]
-# fc[:para][][:method_base]
-# fc[:para][][:receiver][:body]
-# fc[:para][][:receiver][:arct]
-# fc[:para][][:receiver][:var]
-# fc[:para][][:methods][][:body]
-# fc[:para][][:methods][][:arct]
-# fc[:para][][:methods][][:var]
 def pickup_var(fc)
   vars = {}
   fc[:para].each do |liner|
@@ -54,7 +46,7 @@ def pickup_var(fc)
   vars
 end
 
-# var(変数)に分かるものは値を入れます。
+# var(変数)のうち、分かるものは値を入れます。
 def set_ol(fc)
   ol = {}
   vars = pickup_var(fc)

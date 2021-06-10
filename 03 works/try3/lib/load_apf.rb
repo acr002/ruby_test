@@ -31,7 +31,8 @@ def load_apf(path = Dir.pwd + '/*.apf')
       a = line.strip
       next if a.empty?
       next unless a.upcase.start_with?(/.OL/)
-      key = line[3, 3].upcase.to_sym
+      # key = line[3, 3].upcase.to_sym
+      key = line[3, 3].upcase
       apf[key] = APF.new.set_line(key, a)
     end
   end
