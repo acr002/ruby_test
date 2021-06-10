@@ -36,24 +36,26 @@ def cc_works(fc)
   fc[:para].each do |blocks|
     blocks.each do |block|
       # receiverとmethodsの評価をします。
-      result = cc_method(fc[:ol], block)
+      result = cc_method(fc[:ol], block, fc[:tables])
       # p result
-      p '-' * 24
       # その結果を使ってtype毎に評価します。この評価によって次に進むか、このlinerを終了させるかを決めます。
       case block[:type]
       when :if
         break unless result.first
       when :unless
         break if result.first
-      # when :do    # doは必要ありません。すでにolは変更されています。
+      when :do
+        # doは必要ない？すでにolは変更されている？
+        fc[:ol][block[:receiver][:body]].value = result
       end
     end
   end
+  p '-' * 24
 end
 
 def works(fc)
   set_ol(fc)
-  p fc[:line]
+  # p fc[:line][0, 5]
   cc_works(fc)
   File.open('result.txt', 'w'){|f| f.puts fc.pretty_inspect}
   retouch(fc)

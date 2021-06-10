@@ -15,6 +15,7 @@ end
 
 log = {}
 fc = load_files
+# pp fc
 buf_size = max_size(fc)
 Dir.glob('*.in').each do |fn|
   File.open(out_fn(fn), 'w') do |mcs|

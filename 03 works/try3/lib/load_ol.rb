@@ -15,7 +15,7 @@ class OL
   def set(line, apf)
     @value = []
     apf.limit.times do |i|
-      a = line[apf.x + (i * apf.size), apf.size]
+      a = line[(apf.x - 1) + (i * apf.size), apf.size]
       @value << a.to_i unless a.nil?
     end
     # @base = line[apf.x, apf.range]

@@ -71,11 +71,12 @@ class Array
   end
 
   # tableî•ñ‚ª•K—v‚È‚Ì‚Åfc‚ğˆø”‚Å‚Æ‚è‚Ü‚·B
-  def table(arg)
+  def table(arg, table)
     ar = []
+    p "table: #{table}"
     self.map do |e|
-      if fc[:table].include?(arg.first)
-        fc[:table][arg.first].each do |tb|
+      if table.include?(arg.first)
+        table[arg.first].each do |tb|
           if tb[:range].include?(e)
             ar << tb[:ct]
             break

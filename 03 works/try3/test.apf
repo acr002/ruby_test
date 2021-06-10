@@ -7,6 +7,9 @@ COLM01  142 8  8*Q04              M
 COLR01  215     *Q05              R
 
 COLF01  311 1   *Flag01           S
+COLF02  321 1   *Flag02           S
+COLCT1  512 8   *ct               S
+COLCT2  532 8   *ct               S
 
 
 

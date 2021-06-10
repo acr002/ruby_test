@@ -17,16 +17,21 @@ def cc_arg(ol, method)
   ar = method[:arct].dup
   method[:var].each do |e|
     # 理論的にはolにないvarはないはずです。
+    # next if e.start_with?('table')
     if ol.include?(e)
       ar.concat(ol[e].value)
     else
-      puts "cc_arg: olに[#{e}]がありません。".encode('utf-8')
+      if e.start_with?('table')
+        ar << e
+      else
+        puts "cc_arg: olに[#{e}]がありません。".encode('utf-8')
+      end
     end
   end
   ar.uniq
 end
 
-def cc_method(ol, block)
+def cc_method(ol, block, table)
   # receiverのarctやvarが指定されていた場合、置き換える？追加する？
   # 代入とするならば置き換えがわかりやすい？
   # argが複数指定されていたらどうする？
@@ -74,7 +79,7 @@ def cc_method(ol, block)
     when 'set_zero'
       ar = [0] if ar.empty?
     when 'table'
-      ar = ar.table(arg)
+      ar = ar.table(arg, table)
     when 'sum'
       ar = [ar.sum]
     when 'average'
