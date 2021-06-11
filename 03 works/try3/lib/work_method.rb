@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.10]
+#-----------------------------------------------------------[date: 2021.06.11]
 
 class Array
   def include_any?(b)
@@ -73,7 +73,7 @@ class Array
   # tableî•ñ‚ª•K—v‚È‚Ì‚Åfc‚ğˆø”‚Å‚Æ‚è‚Ü‚·B
   def table(arg, table)
     ar = []
-    p "table: #{table}"
+    # p "table: #{table}"
     self.map do |e|
       if table.include?(arg.first)
         table[arg.first].each do |tb|
