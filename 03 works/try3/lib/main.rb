@@ -1,9 +1,9 @@
-#-----------------------------------------------------------[date: 2021.06.10]
+#-----------------------------------------------------------[date: 2021.06.11]
 
-require 'H:/A/ruby/_github/03 works/try3/lib/load_apf.rb'
-require 'H:/A/ruby/_github/03 works/try3/lib/load_para.rb'
-require 'H:/A/ruby/_github/03 works/try3/lib/load_ol.rb'
-require 'H:/A/ruby/_github/03 works/try3/lib/cc_method.rb'
+require './lib/load_apf.rb'
+require './lib/load_para.rb'
+require './lib/load_ol.rb'
+require './lib/cc_method.rb'
 require 'pp'
 
 def max_size(fc)

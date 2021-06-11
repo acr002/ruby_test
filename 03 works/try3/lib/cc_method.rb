@@ -1,7 +1,7 @@
 # coding: cp932
-#-----------------------------------------------------------[date: 2021.06.10]
+#-----------------------------------------------------------[date: 2021.06.11]
 
-require 'H:/A/ruby/_github/03 works/try3/lib/work_method.rb'
+require './lib/work_method.rb'
 
 # receiver[:body]の値を引数で上書きしています。上書きではなく追加などをしたい場合はmethodを使ってください。
 def cc_receiver(ol, receiver)

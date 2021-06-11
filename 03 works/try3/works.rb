@@ -1,13 +1,7 @@
-#-----------------------------------------------------------[date: 2021.06.10]
+#-----------------------------------------------------------[date: 2021.06.11]
 
-# require 'H:/lib/works/main.rb'
-require 'H:/A/ruby/_github/03 works/try3/lib/main.rb'
 require 'pp'
-
-# pp fc
-# File.open('result(fc).txt', 'w') do |f|
-#   f.puts fc.pretty_inspect
-# end
+require './lib/main.rb'
 
 def out_fn(fn)
   "#{File.basename(fn, '.in')}.mcs"
