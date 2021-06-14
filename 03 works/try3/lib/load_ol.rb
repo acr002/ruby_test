@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.10]
+#-----------------------------------------------------------[date: 2021.06.14]
 
 class OL
   attr_reader :key, :base, :apf
@@ -16,7 +16,11 @@ class OL
     @value = []
     apf.limit.times do |i|
       a = line[(apf.x - 1) + (i * apf.size), apf.size]
-      @value << a.to_i unless a.nil?
+      unless a.nil?
+        unless a.strip.empty?
+          @value << a.to_i
+        end
+      end
     end
     # @base = line[apf.x, apf.range]
     @base = @value

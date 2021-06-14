@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.11]
+#-----------------------------------------------------------[date: 2021.06.14]
 
 require 'pp'
 require './lib/main.rb'
@@ -15,7 +15,7 @@ Dir.glob('*.in').each do |fn|
   File.open(out_fn(fn), 'w') do |mcs|
     File.foreach(fn) do |line|
       next if line.strip.empty?
-      fc[:line] = line.strip.ljust(buf_size)
+      fc[:line] = line.rstrip.ljust(buf_size)
       mcs.puts works(fc)
     end
   end

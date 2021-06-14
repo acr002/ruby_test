@@ -280,6 +280,25 @@ c = a.include_any?(b)
 p a, b, c
 ################################
 
+# String#empty?のテスト。文字長さ0の時trueになります。
+a = '  3'
+b = a.strip
+unless b.empty?
+  p b.to_i
+else
+  p 'empty'
+end
+p a
+p a.strip.empty?
+__END__
+unless a.nil?
+  unless a.strip.empty?
+    p "not empty [#{a}]"
+  else
+    p "empty [#{a}]"
+  end
+end
+################################
 
 
 

@@ -1,5 +1,5 @@
 # coding: cp932
-#-----------------------------------------------------------[date: 2021.06.11]
+#-----------------------------------------------------------[date: 2021.06.14]
 
 require './lib/work_method.rb'
 
@@ -55,9 +55,7 @@ def cc_method(ol, block, table)
     when 'nil?'
       ar = [ar.nil?]
     when 'empty?'
-      p ar
       ar = [ar.empty?]
-      p ar
     when 'valid?', 'valid_any?'
       ar = [ar.valid_any?]
     when 'walid_all?'

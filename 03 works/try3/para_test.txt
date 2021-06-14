@@ -12,7 +12,11 @@
 # 
 # if S01.include?(3), unless S02.include?(2 3), S01(1), S03.clear
 
-if S01.zero?, if S02.include?(2 3), S01(1)
-# unless S01.include?(2 3), unless S02.empty?, S02.clear
+# if S01.empty?, if S02.include?(2 3), S01(1)
+# unless S01.empty?, unless S01.include?(2 3), unless S02.empty?, S02.clear
+# if S01.include?(2 3), S02.clear
+
+unless S02.empty?, if S01.empty?, S01(1)
+unless S01.include?(1), S02.clear
 
 
