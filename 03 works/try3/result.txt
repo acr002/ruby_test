@@ -1,6 +1,6 @@
 {:apf=>
   {"SNO"=>
-    #<APF:0x04112d30
+    #<APF:0x040e6be8
      @comment="SamleNo.",
      @cts=0,
      @decimal=0,
@@ -11,7 +11,7 @@
      @type="R",
      @x=1>,
    "S01"=>
-    #<APF:0x04112a90
+    #<APF:0x040e6948
      @comment="Q01",
      @cts=5,
      @key="S01",
@@ -21,7 +21,7 @@
      @type="S",
      @x=11>,
    "S02"=>
-    #<APF:0x04112898
+    #<APF:0x040e6750
      @comment="Q02",
      @cts=5,
      @key="S02",
@@ -31,7 +31,7 @@
      @type="S",
      @x=12>,
    "S03"=>
-    #<APF:0x041126a0
+    #<APF:0x040e6558
      @comment="Q03",
      @cts=5,
      @key="S03",
@@ -41,7 +41,7 @@
      @type="S",
      @x=13>,
    "M01"=>
-    #<APF:0x041124a8
+    #<APF:0x040e6360
      @comment="Q04",
      @cts=8,
      @key="M01",
@@ -51,7 +51,7 @@
      @type="M",
      @x=14>,
    "FM1"=>
-    #<APF:0x041122b0
+    #<APF:0x040e6168
      @comment="Q04_flag",
      @cts=1,
      @key="FM1",
@@ -61,7 +61,7 @@
      @type="S",
      @x=30>,
    "R01"=>
-    #<APF:0x041120b8
+    #<APF:0x040e5f70
      @comment="Q05",
      @cts=0,
      @decimal=0,
@@ -72,7 +72,7 @@
      @type="R",
      @x=31>,
    "F01"=>
-    #<APF:0x04111e90
+    #<APF:0x040e5d48
      @comment="Flag01",
      @cts=1,
      @key="F01",
@@ -82,7 +82,7 @@
      @type="S",
      @x=41>,
    "F02"=>
-    #<APF:0x04111c98
+    #<APF:0x040e5b50
      @comment="Flag02",
      @cts=1,
      @key="F02",
@@ -92,7 +92,7 @@
      @type="S",
      @x=42>,
    "CT1"=>
-    #<APF:0x04111aa0
+    #<APF:0x040e5958
      @comment="ct",
      @cts=8,
      @key="CT1",
@@ -102,7 +102,7 @@
      @type="S",
      @x=51>,
    "CT2"=>
-    #<APF:0x041118a8
+    #<APF:0x040e5760
      @comment="ct",
      @cts=8,
      @key="CT2",
@@ -112,39 +112,21 @@
      @type="S",
      @x=53>},
  :para=>
-  [[{:type=>:unless,
-     :receiver=>{:body=>"S02", :arct=>[], :var=>[]},
-     :methods=>[{:body=>"empty?", :arct=>[], :var=>[]}]},
-    {:type=>:if,
+  [[{:type=>:if,
      :receiver=>{:body=>"S01", :arct=>[], :var=>[]},
      :methods=>[{:body=>"empty?", :arct=>[], :var=>[]}]},
     {:type=>:do,
-     :receiver=>{:body=>"S01", :arct=>[1], :var=>[]},
+     :receiver=>{:body=>"S01", :arct=>[], :var=>["S02"]},
      :methods=>[]},
-    {:type=>:log, :log_title=>"01 set"}]],
+    {:type=>:log, :log_title=>"01 puts"}]],
  :tables=>{},
  :line=>
   "   30                                                                                               ",
  :ol=>
-  {"S02"=>
-    #<OL:0x03c4dee0
+  {"S01"=>
+    #<OL:0x04058400
      @apf=
-      #<APF:0x04112898
-       @comment="Q02",
-       @cts=5,
-       @key="S02",
-       @limit=1,
-       @range=1,
-       @size=1,
-       @type="S",
-       @x=12>,
-     @base=[],
-     @key="S02",
-     @value=[]>,
-   "S01"=>
-    #<OL:0x03c4ddd8
-     @apf=
-      #<APF:0x04112a90
+      #<APF:0x040e6948
        @comment="Q01",
        @cts=5,
        @key="S01",
@@ -155,4 +137,19 @@
        @x=11>,
      @base=[],
      @key="S01",
+     @value=[]>,
+   "S02"=>
+    #<OL:0x04058340
+     @apf=
+      #<APF:0x040e6750
+       @comment="Q02",
+       @cts=5,
+       @key="S02",
+       @limit=1,
+       @range=1,
+       @size=1,
+       @type="S",
+       @x=12>,
+     @base=[],
+     @key="S02",
      @value=[]>}}

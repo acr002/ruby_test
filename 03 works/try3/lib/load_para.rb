@@ -2,9 +2,9 @@
 
 # parameterファイルを読み込んで、fc hashを返します。
 # load(parameter)
-def load_parameter
+def load_parameter(fc)
   tables = {}
-  fc = []
+  para = []
   para_fns = Dir.glob('para*.txt')
   para_fns.each do |fn|
     # puts "load file: #{fn}"
@@ -18,12 +18,14 @@ def load_parameter
       else
         # cn = cn + 1
         blocks = line.split(',')
-        fc << load_blocks(blocks)
+        para << load_blocks(blocks)
       end
     end
     # puts "count: #{cn} blocks"
   end
-  [fc, tables]
+  fc[:para] = para
+  fc[:tables] = tables
+  # [fc, tables]
 end
 
 def load_blocks(blocks)
@@ -46,9 +48,8 @@ def load_blocks(blocks)
     h = {}
     h[:type] = type
     unless type == :log
-      # h[:method_base] = a.join(' ')
-      # a = load_method(h[:method_base])
-      a = load_method(a.join(' '))
+      h[:method_base] = a.join(' ')
+      a = load_method(h[:method_base])
       h[:receiver] = a.shift
       h[:methods] = a
     else

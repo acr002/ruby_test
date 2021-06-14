@@ -7,7 +7,6 @@ def out_fn(fn)
   "#{File.basename(fn, '.in')}.mcs"
 end
 
-log = {}
 fc = load_files
 buf_size = max_size(fc)
 Dir.glob('*.in').each do |fn|

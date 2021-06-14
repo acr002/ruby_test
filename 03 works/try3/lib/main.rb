@@ -17,8 +17,10 @@ end
 
 def load_files
   fc = {}
+  fc[:logs] = {}
   fc[:apf] = load_apf
-  fc[:para], fc[:tables] = load_parameter
+  load_parameter(fc)
+  # fc[:para], fc[:tables] = load_parameter
   fc
 end
 
@@ -36,11 +38,13 @@ end
 
 def cc_works(fc)
   fc[:para].each do |blocks|
+    log = []
     blocks.each do |block|
       # logとlog以外で分けます。
       unless block[:type] == :log
         # receiverとmethodsの評価をします。
         result = cc_method(fc[:ol], block, fc[:tables])
+        log.concat(block[:method_base], result)
         # その結果を使ってtype毎に評価します。この評価によって次に進むか、このlinerを終了させるかを決めます。
         case block[:type]
         when :if
@@ -52,7 +56,7 @@ def cc_works(fc)
           fc[:ol][block[:receiver][:body]].value = result
         end
       else
-        # write log
+        logs[block[:log_title]].sf(*log)
       end
     end
   end

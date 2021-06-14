@@ -17,7 +17,7 @@
 # if S01.include?(2 3), S02.clear
 ################################
 
-unless S02.empty?, if S01.empty?, S01(1), log 01 set
+# unless S02.empty?, if S01.empty?, S01(1), log 01 set
 # unless S01.include?(1), S02.clear
 ################################
 
@@ -35,4 +35,11 @@ unless S02.empty?, if S01.empty?, S01(1), log 01 set
 # S01.clear
 # S01.delete(1 3)
 # S01.change(S02)
+
+# if SNO.same?(1), S01(9)
+if S01.empty?, S01(S02), log 01 puts
+
+
+
+
 

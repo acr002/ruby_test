@@ -308,6 +308,47 @@ p 'yes'.to_i
 # p a == b.sort
 ################################
 
+# ƒƒ\ƒbƒh‚ÉŠi”[Œ³‚Ìhash‚ð“n‚µ‚Ä‚¢‚¢‚Ì‚©ƒeƒXƒg
+def load_para_test(fc, line)
+  unless line.size.zero?
+    a = line.split
+    if a.size > 1
+      fc[a.first] = a[1..nil].join(' ')
+    end
+  end
+end
+fc = {}
+File.foreach('para_test.txt') do |line|
+  load_para_test(fc, line)
+end
+p fc
+################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
