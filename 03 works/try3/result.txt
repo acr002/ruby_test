@@ -1,6 +1,6 @@
 {:apf=>
   {"SNO"=>
-    #<APF:0x040e6be8
+    #<APF:0x040ebc40
      @comment="SamleNo.",
      @cts=0,
      @decimal=0,
@@ -11,7 +11,7 @@
      @type="R",
      @x=1>,
    "S01"=>
-    #<APF:0x040e6948
+    #<APF:0x040eb6b8
      @comment="Q01",
      @cts=5,
      @key="S01",
@@ -21,7 +21,7 @@
      @type="S",
      @x=11>,
    "S02"=>
-    #<APF:0x040e6750
+    #<APF:0x040eb238
      @comment="Q02",
      @cts=5,
      @key="S02",
@@ -31,7 +31,7 @@
      @type="S",
      @x=12>,
    "S03"=>
-    #<APF:0x040e6558
+    #<APF:0x040eaf50
      @comment="Q03",
      @cts=5,
      @key="S03",
@@ -41,7 +41,7 @@
      @type="S",
      @x=13>,
    "M01"=>
-    #<APF:0x040e6360
+    #<APF:0x040eac50
      @comment="Q04",
      @cts=8,
      @key="M01",
@@ -51,7 +51,7 @@
      @type="M",
      @x=14>,
    "FM1"=>
-    #<APF:0x040e6168
+    #<APF:0x040ea8d8
      @comment="Q04_flag",
      @cts=1,
      @key="FM1",
@@ -61,7 +61,7 @@
      @type="S",
      @x=30>,
    "R01"=>
-    #<APF:0x040e5f70
+    #<APF:0x040ea578
      @comment="Q05",
      @cts=0,
      @decimal=0,
@@ -72,7 +72,7 @@
      @type="R",
      @x=31>,
    "F01"=>
-    #<APF:0x040e5d48
+    #<APF:0x040ea0e0
      @comment="Flag01",
      @cts=1,
      @key="F01",
@@ -82,7 +82,7 @@
      @type="S",
      @x=41>,
    "F02"=>
-    #<APF:0x040e5b50
+    #<APF:0x040e9eb8
      @comment="Flag02",
      @cts=1,
      @key="F02",
@@ -92,7 +92,7 @@
      @type="S",
      @x=42>,
    "CT1"=>
-    #<APF:0x040e5958
+    #<APF:0x040e9a68
      @comment="ct",
      @cts=8,
      @key="CT1",
@@ -102,7 +102,7 @@
      @type="S",
      @x=51>,
    "CT2"=>
-    #<APF:0x040e5760
+    #<APF:0x040e9738
      @comment="ct",
      @cts=8,
      @key="CT2",
@@ -113,20 +113,30 @@
      @x=53>},
  :para=>
   [[{:type=>:if,
+     :method_base=>"S01.empty?",
      :receiver=>{:body=>"S01", :arct=>[], :var=>[]},
      :methods=>[{:body=>"empty?", :arct=>[], :var=>[]}]},
     {:type=>:do,
+     :method_base=>"S01(S02)",
      :receiver=>{:body=>"S01", :arct=>[], :var=>["S02"]},
      :methods=>[]},
     {:type=>:log, :log_title=>"01 puts"}]],
  :tables=>{},
+ :logs=>
+  {"01 puts"=>
+    #<Log:0x040c3380
+     @a=[],
+     @cn=0,
+     @head=["[file] log.rb", "[start] 2021.06.14 16:12:46"],
+     @max_el=0,
+     @name="1 01 puts">},
  :line=>
   "   30                                                                                               ",
  :ol=>
   {"S01"=>
-    #<OL:0x04058400
+    #<OL:0x04156548
      @apf=
-      #<APF:0x040e6948
+      #<APF:0x040eb6b8
        @comment="Q01",
        @cts=5,
        @key="S01",
@@ -139,9 +149,9 @@
      @key="S01",
      @value=[]>,
    "S02"=>
-    #<OL:0x04058340
+    #<OL:0x041564b8
      @apf=
-      #<APF:0x040e6750
+      #<APF:0x040eb238
        @comment="Q02",
        @cts=5,
        @key="S02",

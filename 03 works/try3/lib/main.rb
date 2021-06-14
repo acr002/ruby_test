@@ -4,6 +4,7 @@ require './lib/load_apf.rb'
 require './lib/load_para.rb'
 require './lib/load_ol.rb'
 require './lib/cc_method.rb'
+require './lib/log.rb'
 require 'pp'
 
 def max_size(fc)
@@ -17,9 +18,9 @@ end
 
 def load_files
   fc = {}
-  fc[:logs] = {}
   fc[:apf] = load_apf
   load_parameter(fc)
+  set_log(fc)
   # fc[:para], fc[:tables] = load_parameter
   fc
 end
@@ -38,13 +39,13 @@ end
 
 def cc_works(fc)
   fc[:para].each do |blocks|
-    log = []
+    # log = []
     blocks.each do |block|
       # logとlog以外で分けます。
       unless block[:type] == :log
         # receiverとmethodsの評価をします。
         result = cc_method(fc[:ol], block, fc[:tables])
-        log.concat(block[:method_base], result)
+        # log.concat(block[:method_base], result)
         # その結果を使ってtype毎に評価します。この評価によって次に進むか、このlinerを終了させるかを決めます。
         case block[:type]
         when :if
@@ -56,7 +57,7 @@ def cc_works(fc)
           fc[:ol][block[:receiver][:body]].value = result
         end
       else
-        logs[block[:log_title]].sf(*log)
+        # logs[block[:log_title]].sf(*log)
       end
     end
   end

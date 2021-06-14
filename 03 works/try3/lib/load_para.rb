@@ -12,7 +12,7 @@ def load_parameter(fc)
     File.foreach(fn) do |line|
       a = line.strip
       next if a.empty?
-      next if a.start_with?('#')
+      next if a.start_with?('#', '*')
       if a.start_with?('table')
         load_table(tables, a)
       else
@@ -142,6 +142,17 @@ end
 def set_var(vars, v)
   unless v.start_with?('table')
     vars[v] = [] unless vars.include?(v)
+  end
+end
+
+def set_log(fc)
+  fc[:logs] = {}
+  fc[:para].each do |para|
+    para.each do |par|
+      if par[:type] == :log
+        fc[:logs][par[:log_title]] = Log.new(par[:log_title])
+      end
+    end
   end
 end
 

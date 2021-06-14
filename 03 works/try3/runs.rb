@@ -324,6 +324,17 @@ end
 p fc
 ################################
 
+# start_with?‚É•¡”‚Ìˆø”‚ğ“ü‚ê‚éƒeƒXƒg
+a = %w(# *)
+b = 'if S01.include?(1), # S02(S03), * log 01 test, sf'
+b.split(',').each do |e|
+  if e.strip.start_with?(*a)
+    p "comment: #{e}"
+  else
+    p "do!!: #{e}"
+  end
+end
+################################
 
 
 
