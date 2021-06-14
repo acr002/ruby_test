@@ -9,18 +9,18 @@ end
 
 log = {}
 fc = load_files
-# pp fc
 buf_size = max_size(fc)
 Dir.glob('*.in').each do |fn|
   File.open(out_fn(fn), 'w') do |mcs|
     File.foreach(fn) do |line|
       next if line.strip.empty?
       fc[:line] = line.rstrip.ljust(buf_size)
+      # fc[:SNO] = fc[:line][0, 5]
       mcs.puts works(fc)
     end
   end
 end
 # put_log(log)
-p 'end of run'
+puts 'end of run'
 
 

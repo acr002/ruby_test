@@ -36,6 +36,7 @@ def pickup_var(fc)
   vars = {}
   fc[:para].each do |liner|
     liner.each do |block|
+      next if block[:type] == :log
       set_var(vars, block[:receiver][:body])
       block[:receiver][:var].each do |v|
         set_var(vars, v)

@@ -1,4 +1,4 @@
-#-----------------------------------------------------------[date: 2021.06.11]
+#-----------------------------------------------------------[date: 2021.06.14]
 
 # parameterファイルを読み込んで、fc hashを返します。
 # load(parameter)
@@ -28,6 +28,7 @@ end
 
 def load_blocks(blocks)
   blocks.map do |block|
+    next if block.strip.start_with?('#')
     a = block.split
     case a.first
     when 'if'
@@ -44,10 +45,15 @@ def load_blocks(blocks)
     end
     h = {}
     h[:type] = type
-    h[:method_base] = a.join(' ')
-    a = load_method(h[:method_base])
-    h[:receiver] = a.shift
-    h[:methods] = a
+    unless type == :log
+      # h[:method_base] = a.join(' ')
+      # a = load_method(h[:method_base])
+      a = load_method(a.join(' '))
+      h[:receiver] = a.shift
+      h[:methods] = a
+    else
+      h[:log_title] = a.join(' ')
+    end
     h
   end
 end

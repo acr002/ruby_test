@@ -290,16 +290,23 @@ else
 end
 p a
 p a.strip.empty?
-__END__
-unless a.nil?
-  unless a.strip.empty?
-    p "not empty [#{a}]"
-  else
-    p "empty [#{a}]"
-  end
-end
+# unless a.nil?
+#   unless a.strip.empty?
+#     p "not empty [#{a}]"
+#   else
+#     p "empty [#{a}]"
+#   end
+# end
 ################################
 
+z = 'yes'
+a = [1, 2, 3, z]
+b = [3, 2, 1, z]
+p a, b
+p 'yes'.to_i
+# p a.sort
+# p a == b.sort
+################################
 
 
 

@@ -4,10 +4,11 @@ COLS01  111 5   *Q01              S
 COLS02  121 5   *Q02              S
 COLS03  131 5   *Q03              S
 COLM01  142 8  8*Q04              M
-COLR01  215     *Q05              R
+COLFM1  301 1   *Q04_flag         S
+COLR01  315     *Q05              R
 
-COLF01  311 1   *Flag01           S
-COLF02  321 1   *Flag02           S
+COLF01  411 1   *Flag01           S
+COLF02  421 1   *Flag02           S
 COLCT1  512 8   *ct               S
 COLCT2  532 8   *ct               S
 
