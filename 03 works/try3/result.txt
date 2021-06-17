@@ -1,6 +1,6 @@
 {:apf=>
   {"SNO"=>
-    #<APF:0x040ebc40
+    #<APF:0x0404bb60
      @comment="SamleNo.",
      @cts=0,
      @decimal=0,
@@ -11,7 +11,7 @@
      @type="R",
      @x=1>,
    "S01"=>
-    #<APF:0x040eb6b8
+    #<APF:0x0404b488
      @comment="Q01",
      @cts=5,
      @key="S01",
@@ -21,7 +21,7 @@
      @type="S",
      @x=11>,
    "S02"=>
-    #<APF:0x040eb238
+    #<APF:0x0404b0b0
      @comment="Q02",
      @cts=5,
      @key="S02",
@@ -31,7 +31,7 @@
      @type="S",
      @x=12>,
    "S03"=>
-    #<APF:0x040eaf50
+    #<APF:0x0404ae58
      @comment="Q03",
      @cts=5,
      @key="S03",
@@ -41,7 +41,7 @@
      @type="S",
      @x=13>,
    "M01"=>
-    #<APF:0x040eac50
+    #<APF:0x0404aab0
      @comment="Q04",
      @cts=8,
      @key="M01",
@@ -51,7 +51,7 @@
      @type="M",
      @x=14>,
    "FM1"=>
-    #<APF:0x040ea8d8
+    #<APF:0x0404a708
      @comment="Q04_flag",
      @cts=1,
      @key="FM1",
@@ -61,7 +61,7 @@
      @type="S",
      @x=30>,
    "R01"=>
-    #<APF:0x040ea578
+    #<APF:0x0404a480
      @comment="Q05",
      @cts=0,
      @decimal=0,
@@ -72,7 +72,7 @@
      @type="R",
      @x=31>,
    "F01"=>
-    #<APF:0x040ea0e0
+    #<APF:0x0404a030
      @comment="Flag01",
      @cts=1,
      @key="F01",
@@ -82,7 +82,7 @@
      @type="S",
      @x=41>,
    "F02"=>
-    #<APF:0x040e9eb8
+    #<APF:0x04049df0
      @comment="Flag02",
      @cts=1,
      @key="F02",
@@ -92,7 +92,7 @@
      @type="S",
      @x=42>,
    "CT1"=>
-    #<APF:0x040e9a68
+    #<APF:0x04049970
      @comment="ct",
      @cts=8,
      @key="CT1",
@@ -102,7 +102,7 @@
      @type="S",
      @x=51>,
    "CT2"=>
-    #<APF:0x040e9738
+    #<APF:0x04049670
      @comment="ct",
      @cts=8,
      @key="CT2",
@@ -124,19 +124,19 @@
  :tables=>{},
  :logs=>
   {"01 puts"=>
-    #<Log:0x040c3380
+    #<Log:0x04027398
      @a=[],
      @cn=0,
-     @head=["[file] log.rb", "[start] 2021.06.14 16:12:46"],
+     @head=["[file] log.rb", "[start] 2021.06.15 16:23:13"],
      @max_el=0,
      @name="1 01 puts">},
  :line=>
   "   30                                                                                               ",
  :ol=>
   {"S01"=>
-    #<OL:0x04156548
+    #<OL:0x040ba518
      @apf=
-      #<APF:0x040eb6b8
+      #<APF:0x0404b488
        @comment="Q01",
        @cts=5,
        @key="S01",
@@ -149,9 +149,9 @@
      @key="S01",
      @value=[]>,
    "S02"=>
-    #<OL:0x041564b8
+    #<OL:0x040ba470
      @apf=
-      #<APF:0x040eb238
+      #<APF:0x0404b0b0
        @comment="Q02",
        @cts=5,
        @key="S02",

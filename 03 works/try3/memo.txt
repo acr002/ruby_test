@@ -8,6 +8,10 @@ empty?
     > 修正しました。
 
 sample cut
-
+  - all_blank
+  - del_line
+  blockを越えて作用するフラグが必要です。
+  main.rb / cc_worksか、main.rb / worksでのフラグになるのかな？
+  mcs.putsはworks.rbのメインで行っています。
 
 
