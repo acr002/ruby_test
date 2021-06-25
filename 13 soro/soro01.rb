@@ -10,7 +10,7 @@ def delimited(f)
   a.join('.')
 end
 
-# n: Œû”
+# n:   Œû”
 # len: Œ…”
 n = 3
 len = 2
