@@ -29,6 +29,9 @@ url = 'https://qiita.com/search?q=ruby'
 fd = URI.open(url)
 charset = fd.charset
 html = fd.read
+File.open('result_html.txt', 'w', encoding: 'utf-8:cp932'){_1.puts html}
+
+__END__
 doc = Nokogiri::HTML.parse(html, nil, charset)
 
 path = '//h1[@class="searchResult_itemTitle"]'
