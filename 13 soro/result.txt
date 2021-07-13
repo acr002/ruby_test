@@ -18,3 +18,13 @@ your ans: 177
 calc ans: 177
 result:   ok
 ------------------------
+4.times puts
+   73
+   67
+   88
+   98
+time: 6.2320209s
+your ans: 3
+calc ans: 326
+result:   ng
+------------------------
