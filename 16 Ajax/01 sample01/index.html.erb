@@ -1,0 +1,11 @@
+
+<div class="contents">
+  <%= form_for @todo, html: { class: 'form js-form'} do |f|%>
+    <%= f.text_field :content, class: 'form__text-field js-form__text-field' %>
+    <%= f.submit class: 'form__submit js-submit' %>
+  <% end %>
+  <ul class="todos">
+    <%= render @todos %>
+  </ul>
+</div>
+
