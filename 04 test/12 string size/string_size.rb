@@ -8,10 +8,31 @@ class Array
     end
     ms
   end
+
+  def all_count
+    self.map(&:size).sum
+    # cn = 0
+    # self.each do |e|
+    #   cn += e.size
+    # end
+    # cn
+  end
 end
 
-a = File.read('test.txt').split(/\R/)
+# textファイルのサイズには改行も含まれるようです。
+# gsubで改行を消してからsizeを測ってもいいようです。
+# 行数を把握したければsplitをするのもいいと思います。
+
+# a = File.read('test.txt').split(/\R/)
+buf = File.read('test.txt')
+p buf.size
+p "chomp: #{buf.chomp.size}"
+p "gsub: #{buf.gsub(/\R/, '').size}"
+p "delete: #{buf.delete("\R").size}"
+a = buf.split(/\R/)
 p a
+p "count: #{a.size}"
 p a.max_size
+p a.all_count
 
 
