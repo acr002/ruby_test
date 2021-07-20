@@ -1,6 +1,8 @@
 
+# https://qiita.com/hisamura333/items/e3ea6ae549eb09b7efb9
+
 <div class="contents">
-  <%= form_for @todo, html: { class: 'form js-form'} do |f|%>
+  <%= form_for @todo, html: { class: 'form js-form' } do |f|%>
     <%= f.text_field :content, class: 'form__text-field js-form__text-field' %>
     <%= f.submit class: 'form__submit js-submit' %>
   <% end %>
@@ -8,4 +10,5 @@
     <%= render @todos %>
   </ul>
 </div>
+
 

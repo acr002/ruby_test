@@ -1,0 +1,43 @@
+Nokogiri::HTML::Document
+#(Document:0x24 {
+  name = "document",
+  children = [
+    #(DTD:0x30 { name = "html" }),
+    #(Element:0x3c {
+      name = "html",
+      children = [
+        #(Text "\n" + "  "),
+        #(Element:0x48 {
+          name = "body",
+          children = [
+            #(Text "\n" + "    "),
+            #(Element:0x54 {
+              name = "p",
+              attributes = [
+                #(Attr:0x60 { name = "title", value = "this is title." }),
+                #(Attr:0x6c { name = "onclick", value = "myOnclick" })]
+              }),
+            #(Text "\n" + "    "),
+            #(Element:0x78 {
+              name = "p",
+              attributes = [
+                #(Attr:0x84 { name = "title", value = "this is title2." })]
+              }),
+            #(Text "\n" + "    "),
+            #(Element:0x90 {
+              name = "h1",
+              children = [ #(Text "test index #01")]
+              }),
+            #(Text "\n" + "    "),
+            #(Element:0x9c {
+              name = "p",
+              attributes = [
+                #(Attr:0xa8 { name = "class", value = "class_name" })],
+              children = [ #(Text "so.. fuck you")]
+              }),
+            #(Text "\n" + "  ")]
+          }),
+        #(Text "\n")]
+      })]
+  })
+
