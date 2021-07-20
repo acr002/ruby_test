@@ -1,0 +1,117 @@
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<a href="https://rooter.jp/" class="custom-logo-link" rel="home" itemprop="url"><img width="1000" height="185" src="https://rooter.jp/wp-content/uploads/2018/03/rooter_logo.png" class="custom-logo" alt="株式会社ルーター" itemprop="logo" srcset="https://rooter.jp/wp-content/uploads/2018/03/rooter_logo.png 1000w, https://rooter.jp/wp-content/uploads/2018/03/rooter_logo-300x56.png 300w, https://rooter.jp/wp-content/uploads/2018/03/rooter_logo-768x142.png 768w" sizes="(max-width: 1000px) 100vw, 1000px"></a>
+<a href="https://rooter.jp/about/">ABOUT</a>
+<a href="https://rooter.jp/news/">NEWS</a>
+<a href="https://rooter.jp/service/">SERVICE</a>
+<a href="https://rooter.jp/service/web-data-aggregation/">データアグリゲーション</a>
+<a href="https://rooter.jp/service/open-data/">オープンデータ構築</a>
+<a href="https://rooter.jp/service/datahub/">データハブ</a>
+<a href="https://rooter.jp/service/data-consulting/">データコンサルティング</a>
+<a href="https://rooter.jp/product/">PRODUCT</a>
+<a href="https://rooter.jp/product/adcrawl/">アドクロール</a>
+<a href="https://rooter.jp/product/ai-crawler/">AIクローラー</a>
+<a href="/blog/">BLOG</a>
+<a href="https://rooter.jp/recruit/">RECRUIT</a>
+<a href="https://rooter.jp/contact/"></a>
+<a href="/contact/" class="btn">CONTACT</a>
+<a href="https://rooter.jp/web-crawling/xpath-ruby/" rel="bookmark"><time class="entry-date published" datetime="2018-10-28T14:28:59+09:00">2018-10-28</time><time class="updated" datetime="2018-11-14T14:37:49+09:00">2018-11-14</time></a>
+<a href="//b.hatena.ne.jp/entry/https://rooter.jp/web-crawling/xpath-ruby/" class="hatena-bookmark-button" data-hatena-bookmark-title="脱CSSセレクタ！RubyとXPathでスクレイピング" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"></a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://rooter.jp/web-crawling/xpath-ruby/" data-text="脱CSSセレクタ！RubyとXPathでスクレイピング">Tweet</a>
+<a href="https://getpocket.com/save" class="pocket-btn" data-lang="en" data-save-url="https://rooter.jp/web-crawling/xpath-ruby/" data-pocket-count="none" data-pocket-align="left">Pocket</a>
+<a href="https://rooter.jp/category/web-crawling/" rel="category tag">クローリング/スクレイピング</a>
+<a href="//b.hatena.ne.jp/entry/https://rooter.jp/web-crawling/xpath-ruby/" class="hatena-bookmark-button" data-hatena-bookmark-title="脱CSSセレクタ！RubyとXPathでスクレイピング" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"> <img src="//b.hatena.ne.jp/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;"></a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://rooter.jp/web-crawling/xpath-ruby/" data-text="脱CSSセレクタ！RubyとXPathでスクレイピング">Tweet</a>
+<a href="https://getpocket.com/save" class="pocket-btn" data-lang="en" data-save-url="https://rooter.jp/web-crawling/xpath-ruby/" data-pocket-count="none" data-pocket-align="left">Pocket</a>
+<a href="https://rooter.jp/infra-ops/fastest_mysql_to_csv/"></a>
+<a href="https://rooter.jp/data-format/mysql-innodb-index/"></a>
+<a href="https://rooter.jp/web-crawling/how-to-catch-network-by-chrome_remote/"></a>
+<a href="https://rooter.jp/ml/extract_sdgs_icon_from_integrated_report/"></a>
+<a href="https://rooter.jp/rooter/new-graduate-engineer-with-no-programming-experience/"></a>
+<a href="https://rooter.jp/category/alexa/">Alexa/Googleアシスタント</a>
+<a href="https://rooter.jp/category/aws/">AWS</a>
+<a href="https://rooter.jp/category/programming/golang/">Go言語</a>
+<a href="https://rooter.jp/category/programming/js-node/">JavaScript/Node.js</a>
+<a href="https://rooter.jp/category/programming/python/">Python</a>
+<a href="https://rooter.jp/category/rpa/">RPA</a>
+<a href="https://rooter.jp/category/programming/ruby/">Ruby</a>
+<a href="https://rooter.jp/category/tableau/">tableau – タブロー</a>
+<a href="https://rooter.jp/category/web-data-report/">Webデータレポート</a>
+<a href="https://rooter.jp/category/infra-ops/">インフラ/運用</a>
+<a href="https://rooter.jp/category/web-crawling/">クローリング/スクレイピング</a>
+<a href="https://rooter.jp/category/data-format/">データ/フォーマット</a>
+<a href="https://rooter.jp/category/programming/db/">データベース</a>
+<a href="https://rooter.jp/category/programming/">プログラミング</a>
+<a href="https://rooter.jp/category/rooter/">ルーターについて</a>
+<a href="https://rooter.jp/category/no-category/">未分類</a>
+<a href="https://rooter.jp/category/ml/">機械学習</a>
+<a href="https://rooter.jp/category/environment/">開発環境</a>
+<a href="https://rooter.jp/category/voice/">音声</a>
+<a href="https://rooter.jp/2021/07/">2021年7月</a>
+<a href="https://rooter.jp/2021/06/">2021年6月</a>
+<a href="https://rooter.jp/2021/05/">2021年5月</a>
+<a href="https://rooter.jp/2021/04/">2021年4月</a>
+<a href="https://rooter.jp/2021/03/">2021年3月</a>
+<a href="https://rooter.jp/2021/02/">2021年2月</a>
+<a href="https://rooter.jp/2021/01/">2021年1月</a>
+<a href="https://rooter.jp/2020/12/">2020年12月</a>
+<a href="https://rooter.jp/2020/11/">2020年11月</a>
+<a href="https://rooter.jp/2020/10/">2020年10月</a>
+<a href="https://rooter.jp/2020/09/">2020年9月</a>
+<a href="https://rooter.jp/2020/08/">2020年8月</a>
+<a href="https://rooter.jp/2020/07/">2020年7月</a>
+<a href="https://rooter.jp/2020/06/">2020年6月</a>
+<a href="https://rooter.jp/2020/05/">2020年5月</a>
+<a href="https://rooter.jp/2020/04/">2020年4月</a>
+<a href="https://rooter.jp/2020/03/">2020年3月</a>
+<a href="https://rooter.jp/2020/02/">2020年2月</a>
+<a href="https://rooter.jp/2020/01/">2020年1月</a>
+<a href="https://rooter.jp/2019/12/">2019年12月</a>
+<a href="https://rooter.jp/2019/11/">2019年11月</a>
+<a href="https://rooter.jp/2019/10/">2019年10月</a>
+<a href="https://rooter.jp/2019/08/">2019年8月</a>
+<a href="https://rooter.jp/2019/07/">2019年7月</a>
+<a href="https://rooter.jp/2019/06/">2019年6月</a>
+<a href="https://rooter.jp/2019/05/">2019年5月</a>
+<a href="https://rooter.jp/2019/04/">2019年4月</a>
+<a href="https://rooter.jp/2019/03/">2019年3月</a>
+<a href="https://rooter.jp/2019/02/">2019年2月</a>
+<a href="https://rooter.jp/2019/01/">2019年1月</a>
+<a href="https://rooter.jp/2018/12/">2018年12月</a>
+<a href="https://rooter.jp/2018/11/">2018年11月</a>
+<a href="https://rooter.jp/2018/10/">2018年10月</a>
+<a href="https://rooter.jp/2018/09/">2018年9月</a>
+<a href="https://rooter.jp/2018/08/">2018年8月</a>
+<a href="https://rooter.jp/2018/07/">2018年7月</a>
+<a href="https://rooter.jp/2018/06/">2018年6月</a>
+<a href="https://rooter.jp/2018/05/">2018年5月</a>
+<a href="https://rooter.jp/2018/04/">2018年4月</a>
+<a href="https://rooter.jp/2018/03/">2018年3月</a>
+<a href="https://rooter.jp/2017/12/">2017年12月</a>
+<a href="https://rooter.jp/2017/11/">2017年11月</a>
+<a href="https://rooter.jp/2017/10/">2017年10月</a>
+<a href="https://rooter.jp/2017/09/">2017年9月</a>
+<a href="https://rooter.jp/2017/08/">2017年8月</a>
+<a href="https://rooter.jp/2017/07/">2017年7月</a>
+<a href="https://rooter.jp/2017/06/">2017年6月</a>
+<a href="https://rooter.jp/2017/05/">2017年5月</a>
+<a href="https://rooter.jp/2017/02/">2017年2月</a>
+<a href="https://rooter.jp/2016/11/">2016年11月</a>
+<a href="https://rooter.jp/2016/07/">2016年7月</a>
+<a href="https://rooter.jp/2015/12/">2015年12月</a>
+<a href="https://rooter.jp/2015/07/">2015年7月</a>
+<a href="https://rooter.jp/2015/05/">2015年5月</a>
+<a href="/contact/" class="btn white-btn big-btn">CONTACT</a>
+<a href="https://rooter.jp/about/">ABOUT</a>
+<a href="https://rooter.jp/news/">NEWS</a>
+<a href="https://rooter.jp/news_cat/event/">イベント</a>
+<a href="https://rooter.jp/news_cat/press/">プレスリリース</a>
+<a href="https://rooter.jp/service/">SERVICE</a>
+<a href="https://rooter.jp/service/web-data-aggregation/">データアグリゲーション</a>
+<a href="https://rooter.jp/service/robotic-process-automation/">AI×RPA</a>
+<a href="https://rooter.jp/service/data-consulting/">データコンサルティング</a>
+<a href="https://rooter.jp/service/voice-internet/">ヴォイスインターネット</a>
+<a href="https://rooter.jp/product/">PRODUCT</a>
+<a href="https://rooter.jp/product/adcrawl/">アドクロール</a>
+<a href="https://rooter.jp/product/ai-crawler/">AIクローラー</a>
+<a href="https://rooter.jp/recruit/">RECRUIT</a>
+<a href="/blog">BLOG</a>
