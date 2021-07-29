@@ -1,5 +1,5 @@
 
 a = 'fuck!!'
-99.times do
+100.times do
   puts a * 8
 end
