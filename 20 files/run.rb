@@ -13,13 +13,28 @@ end
 need_file = ['.apf', '.in', '.txt', '.md']
 a = search_fns
 p check_file(a, need_file)
+################################
 
-__END__
-need_file = ['apf', 'in', 'txt']
-path_ar = Dir.pwd.split('/')
-p path_ar
-job_code = path_ar[1]
-p job_code
+
+# need_file = ['apf', 'in', 'txt']
+# path_ar = Dir.pwd.split('/')
+# p path_ar
+# job_code = path_ar[1]
+# p job_code
+################################
+
+# ”z—ñ‚Å‚Í‚È‚­Hash‚ÅŠÇ—‚µ‚½•û‚ª’š”J‚©‚ÈH
+def check_files(dir_glob, need_file)
+  h = {}
+  need_file.uniq.each{|e| h[e] = 0}
+  dir_glob.each do |e|
+    ext = File.extname(e)
+    if h.has_key?(ext)
+      h[ext] += 1
+    end
+  end
+  h
+end
 
 
 

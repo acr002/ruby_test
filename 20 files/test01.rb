@@ -5,19 +5,6 @@ def search_fns(dir = Dir.pwd)
   Dir.glob(dir + '/*')
 end
 
-# ”z—ñ‚Å‚Í‚È‚­Hash‚ÅŠÇ—‚µ‚½•û‚ª’š”J‚©‚ÈH
-def check_files(dir_glob, need_file)
-  h = {}
-  need_file.uniq.each{|e| h[e] = 0}
-  dir_glob.each do |e|
-    ext = File.extname(e)
-    if h.has_key?(ext)
-      h[ext] += 1
-    end
-  end
-  h
-end
-
 def create_hash(need_file)
   base_ext = {}
   need_file.uniq.each do |e|
@@ -36,9 +23,21 @@ def create_hash(need_file)
   base_ext
 end
 
-need_file = ['apf', 'in', 'txt', 'md', 'rb']
-a = create_hash(need_file)
-pp a
+def sfns(path)
+  Dir.glob(path)
+end
+
+def target_files(need_file)
+  need_file.each do |k, v|
+    # p "#{Dir.pwd}/*#{k}"
+    p sfns("#{Dir.pwd}/*#{k}")
+  end
+end
+
+ar_need_file = ['apf', 'in', 'txt', 'md', 'rb']
+need_file = create_hash(ar_need_file)
+pp need_file
+target_files(need_file)
 
 __END__
 a = search_fns
