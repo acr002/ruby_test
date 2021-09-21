@@ -1,0 +1,14 @@
+.box{
+  float: left;
+}
+
+.boxContainer{
+  overflow: hidden;
+}
+
+.clearfix:after {
+  content:" ";
+  display:block;
+  clear:both;
+}
+
