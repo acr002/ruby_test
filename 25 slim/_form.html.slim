@@ -1,0 +1,18 @@
+= form_with(model: memo) do |form|
+  - if memo.errors.any?
+    #error_explanation
+      h2
+        = pluralize(memo.errors.count, "error")
+        |  prohibited this memo from being saved:
+      ul
+        - memo.errors.each do |error|
+          li
+            = error.full_message
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :content
+    = form.text_area :content
+  .actions
+    = form.submit
