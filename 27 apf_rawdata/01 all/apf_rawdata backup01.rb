@@ -8,7 +8,6 @@
 # 最大値を出力
 # 全パターンは不要？
 
-
 def load_apf
   apf = {}
   Dir.glob('*.apf') do |fn|
@@ -57,12 +56,17 @@ end
 
 class String
   def sf!(apf, ar)
-    buf = ar[0, apf[:limit]].map{_1.to_s.rjust(apf[:size], '0')[0, apf[:size]]}.join
+    case apf[:type]
+    when 'R'
+      buf = ar.first.to_s.rjust(apf[:size])[0, apf[:size]]
+    else
+      buf = ar[0, apf[:limit]].map{_1.to_s.rjust(apf[:size], '0')[0, apf[:size]]}.join
+    end
     a = self[apf[:x] - 1, buf.size]
     unless a.strip.empty?
       p "updata! #{apf[:key]}: before[#{a}] new[#{buf}]"
     end
-      self[apf[:x] - 1, buf.size] = buf
+    self[apf[:x] - 1, buf.size] = buf
     buf
   end
 
@@ -89,7 +93,7 @@ apf.each do |k, v|
   ar = (1..cts).to_a
   buf.sf!(v, ar)
 end
-buf.sf!(sno, [1])
+buf.sf!(sno, [10001])
 col << buf
 
 # 最大値の出力
@@ -102,16 +106,22 @@ apf.each do |k, v|
   end
   buf.sf!(v, ar)
 end
-buf.sf!(sno, [2])
+buf.sf!(sno, [10002])
 col << buf
 
 # rand()
-98.times do |i|
+# 回答するかどうかをrandで決めます。
+# fixerの値を大きくすればするほど回答数は多くなることが期待できます。
+fixer = 4
+998.times do |i|
   buf = ' ' * text_size
   apf.each do |k, v|
+    next if rand(0..fixer).zero?
+    # 回答値の作成
     case v[:type]
     when 'R'
-      a = ('9' * v[:size]).to_i
+      column = rand(1..v[:size])
+      a = ('9' * column).to_i
       ar = [rand(1..a)]
     when 'S'
       ar = [rand(1..v[:cts])]
@@ -124,7 +134,7 @@ col << buf
     end
     buf.sf!(v, ar)
   end
-  buf.sf!(sno, [i + 3])
+  buf.sf!(sno, [i + 10003])
   col << buf
 end
 

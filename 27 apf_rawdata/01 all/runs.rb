@@ -31,7 +31,20 @@ ar = [1]
 p ar[0, 1].map{_1.to_s.rjust(5, '0')}.join
 ################################
 
+a = 'test data                             '
+b = a[11, 3]
+p b
+p b.strip.empty?
+################################
 
+# a = rand(0..1)
+# p a
+a = []
+10.times do
+  a << rand(0..2)
+end
+p a.group_by(&:itself).map{|k, v| [k, v.size]}.to_h
+################################
 
 
 
