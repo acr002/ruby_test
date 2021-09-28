@@ -2,6 +2,13 @@
 # apf load
 # puts text
 
+# text の設置方法はsliceを使う。
+
+# 最小値を出力
+# 最大値を出力
+# 全パターンは不要？
+
+
 def load_apf
   apf = {}
   Dir.glob('*.apf') do |fn|
@@ -26,6 +33,19 @@ def load_apf
   apf
 end
 
+def set_sno
+  sno = {}
+  sno[:key]     = 'SNO'
+  sno[:x]       = 1
+  sno[:size]    = 5
+  sno[:cts]     = 0
+  sno[:limit]   = 1
+  sno[:comment] = 'SampleNo.'
+  sno[:type]    = 'R'
+  sno[:range] = sno[:size] * sno[:limit]
+  sno
+end
+
 def apf_length(apf)
   max = 0
   apf.each do |k, v|
@@ -36,31 +56,82 @@ def apf_length(apf)
 end
 
 class String
-  def sf(buf, x)
-    self[x, buf.size] = buf
+  def sf!(apf, ar)
+    buf = ar[0, apf[:limit]].map{_1.to_s.rjust(apf[:size], '0')[0, apf[:size]]}.join
+    a = self[apf[:x] - 1, buf.size]
+    unless a.strip.empty?
+      p "updata! #{apf[:key]}: before[#{a}] new[#{buf}]"
+    end
+      self[apf[:x] - 1, buf.size] = buf
+    buf
+  end
+
+  def sf(apf, ar)
+    a = self.clone
+    a.sf!(apf, ar)
   end
 end
 
 apf = load_apf
-max = apf_length(apf)
-p max
-__END__
+sno = set_sno
+text_size = apf_length(apf)
 
 col = []
 
+# 最小値の出力
+buf = ' ' * text_size
 apf.each do |k, v|
-  ar = (1..v[:limit]).to_a
-
-
-
+  if v[:cts].zero?
+    cts = 1
+  else
+    cts = v[:cts]
   end
+  ar = (1..cts).to_a
+  buf.sf!(v, ar)
+end
+buf.sf!(sno, [1])
+col << buf
+
+# 最大値の出力
+buf = ' ' * text_size
+apf.each do |k, v|
+  if v[:cts].zero?
+    ar = [('9' * v[:size]).to_i]
+  else
+    ar = [v[:cts]]
+  end
+  buf.sf!(v, ar)
+end
+buf.sf!(sno, [2])
+col << buf
+
+# rand()
+98.times do |i|
+  buf = ' ' * text_size
+  apf.each do |k, v|
+    case v[:type]
+    when 'R'
+      a = ('9' * v[:size]).to_i
+      ar = [rand(1..a)]
+    when 'S'
+      ar = [rand(1..v[:cts])]
+    when 'M'
+      a = []
+      rand(1..v[:cts]).times do
+        a << rand(1..v[:cts])
+      end
+      ar = a.uniq.sort
+    end
+    buf.sf!(v, ar)
+  end
+  buf.sf!(sno, [i + 3])
+  col << buf
 end
 
-# text の設置方法はsliceを使う。
-
-# 最小値を出力
-# 最大値を出力
-# 全パターンは不要？
+# output to file
+File.open('test_data.in', 'w') do |f|
+  f.puts col
+end
 
 
 
