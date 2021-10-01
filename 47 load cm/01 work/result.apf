@@ -1,0 +1,112 @@
+*-----------------------------------------------------------[date: 2020.12.21]
+*jobcode: F2100502
+*jobname: 立命館大学「児童養護施設退所者の退所後の生活状況と幼少期体験の関連に関する実態調査」
+*-----------------------------------------------------------------------------
+*MSNO00*ｓａｍｐｌｅ　ｉｄ　　　　　　　　　　　　　　　　　　*     R 5
+*MCOD00*Ｆ０　ｃｏｄｅ　　　　　　　　　　　　　　　　　　　　*     R 5
+// PARAM I/B=0600,03600
+*OLSNO   15     *SampleNo.        R                     01 1
+*OLCOD  113     *code             R                     01 1
+COLS01  211 2   *                 S
+COLS02  221 5   *                 S
+COLS03  231 3   *                 S
+COLM01  24220120*                 M
+COLS04  641 5   *                 S
+COLS05  651 2   *                 S
+COLM02  661 51 5*                 M
+COLS06  711 3   *                 S
+COLS07  721 3   *                 S
+COLS08  731 3   *                 S
+COLS09  741 3   *                 S
+COLS10  751 3   *                 S
+COLS11  761 3   *                 S
+COLS12  771 3   *                 S
+COLM03  78213113*                 M
+COLM04 1041 41 4*                 M
+COLS13 1081 2   *                 S
+COLM05 1091 51 5*                 M
+COLS14 1141 3   *                 S
+COLS15 1151 3   *                 S
+COLS16 1161 3   *                 S
+COLS17 1171 3   *                 S
+COLS18 1181 3   *                 S
+COLS19 1191 3   *                 S
+COLS20 1201 3   *                 S
+COLM06 121213113*                 M
+COLM07 1471 41 4*                 M
+COLS21 1511 3   *                 S
+COLA01 1525     *                 R                     01 1
+COLA02 1575     *                 R                     01 1
+COLS22 1621 2   *                 S
+COLM08 163225125*                 M
+COLS23 2131 2   *                 S
+COLM09 2141 91 9*                 M
+COLA03 2235     *                 R                     01 1
+COLA04 2285     *                 R                     01 1
+COLM10 233225125*                 M
+COLS24 2831 2   *                 S
+COLA05 2845     *                 R                     01 1
+COLA06 2898     *                 R                     01 1
+COLA07 2975     *                 R                     01 1
+COLA08 3028     *                 R                     01 1
+COLA09 3105     *                 R                     01 1
+COLA10 3158     *                 R                     01 1
+COLM11 323210110*                 M
+COLM12 3431 41 4*                 M
+COLS25 3471 2   *                 S
+COLS26 3481 2   *                 S
+COLS27 3491 2   *                 S
+COLS28 3501 2   *                 S
+COLS29 3511 2   *                 S
+COLS30 3521 2   *                 S
+COLS31 3531 2   *                 S
+COLS32 3541 2   *                 S
+COLS33 3551 2   *                 S
+COLS34 3561 2   *                 S
+COLS35 3571 2   *                 S
+COLS36 3581 2   *                 S
+COLS37 3591 2   *                 S
+COLS38 3601 2   *                 S
+COLS39 3611 2   *                 S
+COLS40 3621 2   *                 S
+COLS41 3631 2   *                 S
+COLS42 3641 2   *                 S
+COLS43 3651 2   *                 S
+COLS44 3661 2   *                 S
+COLS45 3671 2   *                 S
+COLS46 3681 2   *                 S
+COLS47 3691 2   *                 S
+COLS48 3701 2   *                 S
+COLS49 3711 2   *                 S
+COLS50 3721 2   *                 S
+COLS51 3731 2   *                 S
+COLS52 3741 2   *                 S
+COLS53 3751 2   *                 S
+COLS54 3761 2   *                 S
+COLS55 3771 2   *                 S
+COLS56 3781 2   *                 S
+COLS57 3791 2   *                 S
+COLS58 3801 2   *                 S
+COLS59 3811 2   *                 S
+COLS60 3821 2   *                 S
+COLS61 3831 2   *                 S
+COLS62 3841 2   *                 S
+COLS63 3851 2   *                 S
+COLS64 3861 2   *                 S
+COLEEE 3871 1   *                 S
+
+* categorize
+COLA01 4012 9   *ct_              S
+COLA02 403211   *ct_              S
+COLA03 4052 9   *ct_              S
+COLA04 4072 9   *ct_              S
+COLA05 4092 4   *ct_              S
+COLA06 4112 4   *ct_              S
+COLA07 4132 4   *ct_              S
+COLA08 4152 4   *ct_              S
+COLA09 4172 4   *ct_              S
+COLA10 4192 4   *ct_              S
+
+* flag
+COLFL1 5012 1   *f_               S
+COLFL2 5032 1   *f_               S

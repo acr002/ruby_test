@@ -1,0 +1,93 @@
+*-----------------------------------------------------------[date: 2020.12.21]
+*jobcode: F2100502
+*jobname: 立命館大学「児童養護施設退所者の退所後の生活状況と幼少期体験の関連に関する実態調査」
+*-----------------------------------------------------------------------------
+*MSNO00*ｓａｍｐｌｅ　ｉｄ　　　　　　　　　　　　　　　　　　*     R 5
+*MCOD00*Ｆ０　ｃｏｄｅ　　　　　　　　　　　　　　　　　　　　*     R 5
+CRS0001xxxS01                                                               T *
+CRS0002xxxS02                                                               T *
+CRS0003xxxS03                                                               T *
+CRS0004xxxM01                                                               T *
+CRS0005xxxS04                                                               T *
+CRS0006xxxS05                                                               T *
+CRS0007xxxM02                                                               T *
+CRS0008xxxS06                                                               T *
+CRS0009xxxS07                                                               T *
+CRS0010xxxS08                                                               T *
+CRS0011xxxS09                                                               T *
+CRS0012xxxS10                                                               T *
+CRS0013xxxS11                                                               T *
+CRS0014xxxS12                                                               T *
+CRS0015xxxM03                                                               T *
+CRS0016xxxM04                                                               T *
+CRS0017xxxS13                                                               T *
+CRS0018xxxM05                                                               T *
+CRS0019xxxS14                                                               T *
+CRS0020xxxS15                                                               T *
+CRS0021xxxS16                                                               T *
+CRS0022xxxS17                                                               T *
+CRS0023xxxS18                                                               T *
+CRS0024xxxS19                                                               T *
+CRS0025xxxS20                                                               T *
+CRS0026xxxM06                                                               T *
+CRS0027xxxM07                                                               T *
+CRS0028xxxS21                                                               T *
+CRS0029xxxA01                                      A01                YY    T *
+CRS0030xxxA02                                      A02                YY    T *
+CRS0031xxxS22                                                               T *
+CRS0032xxxM08                                                               T *
+CRS0033xxxS23                                                               T *
+CRS0034xxxM09                                                               T *
+CRS0035xxxA03                                      A03                YY    T *
+CRS0036xxxA04                                      A04                YY    T *
+CRS0037xxxM10                                                               T *
+CRS0038xxxS24                                                               T *
+CRS0039xxxA05                                      A05                YY    T *
+CRS0040xxxA06                                      A06                YY    T *
+CRS0041xxxA07                                      A07                YY    T *
+CRS0042xxxA08                                      A08                YY    T *
+CRS0043xxxA09                                      A09                YY    T *
+CRS0044xxxA10                                      A10                YY    T *
+CRS0045xxxM11                                                               T *
+CRS0046xxxM12                                                               T *
+CRS0047xxxS25                                                               T *
+CRS0048xxxS26                                                               T *
+CRS0049xxxS27                                                               T *
+CRS0050xxxS28                                                               T *
+CRS0051xxxS29                                                               T *
+CRS0052xxxS30                                                               T *
+CRS0053xxxS31                                                               T *
+CRS0054xxxS32                                                               T *
+CRS0055xxxS33                                                               T *
+CRS0056xxxS34                                                               T *
+CRS0057xxxS35                                                               T *
+CRS0058xxxS36                                                               T *
+CRS0059xxxS37                                                               T *
+CRS0060xxxS38                                                               T *
+CRS0061xxxS39                                                               T *
+CRS0062xxxS40                                                               T *
+CRS0063xxxS41                                                               T *
+CRS0064xxxS42                                                               T *
+CRS0065xxxS43                                                               T *
+CRS0066xxxS44                                                               T *
+CRS0067xxxS45                                                               T *
+CRS0068xxxS46                                                               T *
+CRS0069xxxS47                                                               T *
+CRS0070xxxS48                                                               T *
+CRS0071xxxS49                                                               T *
+CRS0072xxxS50                                                               T *
+CRS0073xxxS51                                                               T *
+CRS0074xxxS52                                                               T *
+CRS0075xxxS53                                                               T *
+CRS0076xxxS54                                                               T *
+CRS0077xxxS55                                                               T *
+CRS0078xxxS56                                                               T *
+CRS0079xxxS57                                                               T *
+CRS0080xxxS58                                                               T *
+CRS0081xxxS59                                                               T *
+CRS0082xxxS60                                                               T *
+CRS0083xxxS61                                                               T *
+CRS0084xxxS62                                                               T *
+CRS0085xxxS63                                                               T *
+CRS0086xxxS64                                                               T *
+CRS0087xxxEEE         FL1=    1*FL2=    1                                   T *
