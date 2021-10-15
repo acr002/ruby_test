@@ -22,7 +22,7 @@ ar << ''
 ar << '  '
 ar << 'fuck'
 ar << '12'
-ar << 'ruby, rails fun!'
+ar << 'ruby, rails is very fun!'
 max = ar.map{_1.size}.max + 2
 
 
@@ -34,9 +34,15 @@ max = ar.map{_1.size}.max + 2
 # end
 
 ar.each do |buf|
-  a.midre(10, 6, buf)
+  # a.midre(10, 6, buf)
+  a.midre(10, buf.size, buf)
   puts "#{buf.ljust(max)}: #{a}"
 end
 
 p a
 p a.size
+
+
+
+
+
