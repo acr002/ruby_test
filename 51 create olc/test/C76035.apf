@@ -1,0 +1,400 @@
+*-----------------------------------------------------------[date: 2021.10.14]
+*jobcode: C76035
+*jobname: 日本司法書士会連合会 第２回司法書士全国調査
+*-----------------------------------------------------------------------------
+
+* MCS集計で使用します。
+* Q15
+* Q15_sq
+* Q16
+* Q20
+* の計39コについて、RAを7バイトにしました。
+* 10バイトで入力してもらい、1000未満を切り捨てます。
+
+// PARAM I/B=1300,02600
+*OLSNO   15     *SampleNo         R                     01 1
+COLKBN   11 3   *kubun            S
+COLS01  111 3   *F1               S
+COLS02  12213   *F2               S
+COLS03  141 8   *F3               S
+COLS04  151 2   *F4               S
+COLS05  161 3   *F6               S
+COLS06  171 3   *F7               S
+COLR01  185     *F7_1_child       R                     01 1
+COLR02  235     *F7_2_little      R                     01 1
+COLS07  281 3   *F8               S
+COLR03  295     *F8_1             R                     01 1
+COLS08  341 2   *Q01              S
+COLS09  351 8   *Q02              S
+COLR04  365     *Q03              R                     01 1
+COLR05  415     *Q04_1            R                     01 1
+COLR06  465     *Q04_2            R                     01 1
+COLR07  515     *Q05_1            R                     01 1
+COLR08  565     *Q05_2            R                     01 1
+COLR09  615     *Q05_3            R                     01 1
+COLR10  665     *Q05_4            R                     01 1
+COLR11  715     *Q05_5            R                     01 1
+COLR12  765     *Q05_6            R                     01 1
+COLR13  815     *Q05_7            R                     01 1
+COLR14  865     *Q05_8            R                     01 1
+COLR15  915     *Q05_9            R                     01 1
+COLS10  961 2   *Q06              S
+COLS11  971 8   *Q07              S
+COLS12  981 3   *Q08              S
+COLS13  991 4   *Q09              S
+COLR16 1005     *Q10_1_area       R                     01 1
+COLR17 1055     *Q10_2_rooms      R                     01 1
+COLR18 1105     *Q10_3_private    R                     01 1
+COLM01 115210110*Q11              M
+COLM02 135210110*Q12              M
+COLR19 1555     *Q13_01           R                     01 1
+COLR20 1605     *Q13_02           R                     01 1
+COLR21 1655     *Q13_03           R                     01 1
+COLR22 1705     *Q13_04           R                     01 1
+COLR23 1755     *Q13_05           R                     01 1
+COLR24 1805     *Q13_06           R                     01 1
+COLR25 1855     *Q13_07           R                     01 1
+COLR26 1905     *Q13_08           R                     01 1
+COLR27 1955     *Q13_09           R                     01 1
+COLR28 2005     *Q13_10           R                     01 1
+COLS14 2051 2   *Q14              S
+COLR29 2065     *Q14_1            R                     01 1
+COLR30 2115     *Q14_2            R                     01 1
+COLR31 2165     *Q14_3            R                     01 1
+COLR32 2215     *Q14_4            R                     01 1
+COLR33 2265     *Q14_5            R                     01 1
+COLR34 2317     *Q15_1            R                     01 1
+COLR35 2417     *Q15_2            R                     01 1
+COLR36 2517     *Q15_3            R                     01 1
+COLR37 2617     *Q15_4            R                     01 1
+COLR38 2717     *Q15_5            R                     01 1
+COLR39 2817     *Q15_sq_A         R                     01 1
+COLR40 2917     *Q15_sq_B         R                     01 1
+COLR41 3017     *Q15_sq_C         R                     01 1
+COLR42 3117     *Q15_sq_D         R                     01 1
+COLR43 3217     *Q15_sq_E         R                     01 1
+COLR44 3317     *Q16_01           R                     01 1
+COLR45 3417     *Q16_02           R                     01 1
+COLR46 3517     *Q16_03           R                     01 1
+COLR47 3617     *Q16_04           R                     01 1
+COLR48 3717     *Q16_05           R                     01 1
+COLR49 3817     *Q16_06           R                     01 1
+COLR50 3917     *Q16_07           R                     01 1
+COLR51 4017     *Q16_08           R                     01 1
+COLR52 4117     *Q16_09           R                     01 1
+COLR53 4217     *Q16_10           R                     01 1
+COLR54 4317     *Q16_11           R                     01 1
+COLR55 4417     *Q16_B_1          R                     01 1
+COLR56 4517     *Q16_B_2          R                     01 1
+COLR57 4617     *Q16_B_3          R                     01 1
+COLR58 4717     *Q16_B_4          R                     01 1
+COLR59 4817     *Q16_B_5          R                     01 1
+COLR60 4917     *Q16_B_6          R                     01 1
+COLR61 5017     *Q16_B_7          R                     01 1
+COLR62 5117     *Q16_B_8          R                     01 1
+COLR63 5217     *Q16_B_9          R                     01 1
+COLM03 531210110*Q17              M
+COLS15 551216   *Q18              S
+COLS16 5531 7   *Q19              S
+COLR64 5547     *Q20_1            R                     01 1
+COLR65 5647     *Q20_2            R                     01 1
+COLR66 5747     *Q20_3            R                     01 1
+COLR67 5847     *Q20_4            R                     01 1
+COLR68 5947     *Q20_5            R                     01 1
+COLR69 6047     *Q20_6            R                     01 1
+COLR70 6147     *Q20_7            R                     01 1
+COLR71 6247     *Q20_8            R                     01 1
+COLR72 6347     *Q20_9            R                     01 1
+COLS17 6441 6   *Q21_01           S
+COLS18 6451 6   *Q21_02           S
+COLS19 6461 6   *Q21_03           S
+COLS20 6471 6   *Q21_04           S
+COLS21 6481 6   *Q21_05           S
+COLS22 6491 6   *Q21_06           S
+COLS23 6501 6   *Q21_07           S
+COLS24 6511 6   *Q21_08           S
+COLS25 6521 6   *Q21_09           S
+COLS26 6531 6   *Q21_10           S
+COLS27 6541 6   *Q21_11           S
+COLS28 6551 6   *Q21_12           S
+COLS29 6561 4   *Q22              S
+COLM04 657210110*Q23              M
+COLS30 6771 6   *Q24_1            S
+COLS31 6781 6   *Q24_2            S
+COLS32 6791 6   *Q24_3            S
+COLS33 6801 6   *Q24_4            S
+COLS34 6811 6   *Q24_5            S
+COLS35 6821 6   *Q24_6            S
+COLS36 6831 6   *Q24_7            S
+COLS37 6841 6   *Q24_8            S
+COLS38 6851 6   *Q24_9            S
+COLS39 6861 6   *Q25_01           S
+COLS40 6871 6   *Q25_02           S
+COLS41 6881 6   *Q25_03           S
+COLS42 6891 6   *Q25_04           S
+COLS43 6901 6   *Q25_05           S
+COLS44 6911 6   *Q25_06           S
+COLS45 6921 6   *Q25_07           S
+COLS46 6931 6   *Q25_08           S
+COLS47 6941 6   *Q25_09           S
+COLS48 6951 6   *Q25_10           S
+COLS49 6961 3   *Q26_1            S
+COLS50 6971 3   *Q26_2            S
+COLS51 6981 3   *Q26_3            S
+COLS52 6991 3   *Q26_4            S
+COLS53 7001 3   *Q26_5            S
+COLS54 7011 3   *Q26_6            S
+COLS55 7021 3   *Q26_7            S
+COLS56 7031 3   *Q26_8            S
+COLS57 7041 3   *Q26_9            S
+COLS58 7051 6   *Q27_01           S
+COLS59 7061 6   *Q27_02           S
+COLS60 7071 6   *Q27_03           S
+COLS61 7081 6   *Q27_04           S
+COLS62 7091 6   *Q27_05           S
+COLS63 7101 6   *Q27_06           S
+COLS64 7111 6   *Q27_07           S
+COLS65 7121 6   *Q27_08           S
+COLS66 7131 6   *Q27_09           S
+COLS67 7141 6   *Q27_10           S
+COLM05 7151 81 8*Q28              M
+COLS68 7231 6   *Q29              S
+COLS69 7241 6   *Q30              S
+COLM06 7251 91 9*Q31              M
+COLM07 7341 81 8*Q32              M
+
+* categorize
+COLA01 8012 5   *ct_F7_1_child    S
+COLA02 8032 5   *ct_F7_2_little   S                         A01
+COLA03 8052 5   *ct_F8_1          S                         A01
+COLA04 8072 5   *ct_Q03           S
+COLA05 8092 5   *ct_Q04_1         S                         A04
+COLA06 8112 5   *ct_Q04_2         S                         A04
+COLA07 8132 5   *ct_Q05_1         S                         A04
+COLA08 8152 5   *ct_Q05_2         S                         A04
+COLA09 8172 5   *ct_Q05_3         S                         A04
+COLA10 8192 5   *ct_Q05_4         S                         A04
+COLA11 8212 5   *ct_Q05_5         S                         A04
+COLA12 8232 5   *ct_Q05_6         S                         A04
+COLA13 8252 5   *ct_Q05_7         S                         A04
+COLA14 8272 5   *ct_Q05_8         S                         A04
+COLA15 8292 5   *ct_Q05_9         S                         A04
+COLA16 8312 6   *ct_Q10_1_area    S
+COLA17 8332 5   *ct_Q10_2_rooms   S
+COLA18 8352 5   *ct_Q10_3_private S                         A17
+COLA19 8372 6   *ct_Q13_01        S
+COLA20 8392 6   *ct_Q13_02        S                         A19
+COLA21 8412 6   *ct_Q13_03        S                         A19
+COLA22 8432 6   *ct_Q13_04        S                         A19
+COLA23 8452 6   *ct_Q13_05        S                         A19
+COLA24 8472 6   *ct_Q13_06        S                         A19
+COLA25 8492 6   *ct_Q13_07        S                         A19
+COLA26 8512 6   *ct_Q13_08        S                         A19
+COLA27 8532 6   *ct_Q13_09        S                         A19
+COLA28 8552 6   *ct_Q13_10        S                         A19
+COLA29 8572 5   *ct_Q14_1         S
+COLA30 8592 5   *ct_Q14_2         S                         A29
+COLA31 8612 5   *ct_Q14_3         S                         A29
+COLA32 8632 5   *ct_Q14_4         S                         A29
+COLA33 8652 5   *ct_Q14_5         S                         A29
+COLA34 8672 7   *ct_Q15_1         S
+COLA35 8692 7   *ct_Q15_2         S                         A34
+COLA36 8712 7   *ct_Q15_3         S                         A34
+COLA37 8732 7   *ct_Q15_4         S                         A34
+COLA38 8752 7   *ct_Q15_5         S                         A34
+COLA39 8772 7   *ct_Q15_sq_A      S                         A34
+COLA40 8792 7   *ct_Q15_sq_B      S                         A34
+COLA41 8812 7   *ct_Q15_sq_C      S                         A34
+COLA42 8832 7   *ct_Q15_sq_D      S                         A34
+COLA43 8852 7   *ct_Q15_sq_E      S                         A34
+COLA44 8872 7   *ct_Q16_01        S                         A34
+COLA45 8892 7   *ct_Q16_02        S                         A34
+COLA46 8912 7   *ct_Q16_03        S                         A34
+COLA47 8932 7   *ct_Q16_04        S                         A34
+COLA48 8952 7   *ct_Q16_05        S                         A34
+COLA49 8972 7   *ct_Q16_06        S                         A34
+COLA50 8992 7   *ct_Q16_07        S                         A34
+COLA51 9012 7   *ct_Q16_08        S                         A34
+COLA52 9032 7   *ct_Q16_09        S                         A34
+COLA53 9052 7   *ct_Q16_10        S                         A34
+COLA54 9072 7   *ct_Q16_11        S                         A34
+COLA55 9092 7   *ct_Q16_B_1       S                         A34
+COLA56 9112 7   *ct_Q16_B_2       S                         A34
+COLA57 9132 7   *ct_Q16_B_3       S                         A34
+COLA58 9152 7   *ct_Q16_B_4       S                         A34
+COLA59 9172 7   *ct_Q16_B_5       S                         A34
+COLA60 9192 7   *ct_Q16_B_6       S                         A34
+COLA61 9212 7   *ct_Q16_B_7       S                         A34
+COLA62 9232 7   *ct_Q16_B_8       S                         A34
+COLA63 9252 7   *ct_Q16_B_9       S                         A34
+COLA64 927215   *ct_Q20_1         S
+COLA65 929215   *ct_Q20_2         S                         A64
+COLA66 931215   *ct_Q20_3         S                         A64
+COLA67 933215   *ct_Q20_4         S                         A64
+COLA68 935215   *ct_Q20_5         S                         A64
+COLA69 937215   *ct_Q20_6         S                         A64
+COLA70 939215   *ct_Q20_7         S                         A64
+COLA71 941215   *ct_Q20_8         S                         A64
+COLA72 943215   *ct_Q20_9         S                         A64
+
+* for weight(category)  cloneついでに6ct→5ctもしています。
+COLB1710011 5   *Q21_01           S
+COLB1810021 5   *Q21_02           S                         B17
+COLB1910031 5   *Q21_03           S                         B17
+COLB2010041 5   *Q21_04           S                         B17
+COLB2110051 5   *Q21_05           S                         B17
+COLB2210061 5   *Q21_06           S                         B17
+COLB2310071 5   *Q21_07           S                         B17
+COLB2410081 5   *Q21_08           S                         B17
+COLB2510091 5   *Q21_09           S                         B17
+COLB2610101 5   *Q21_10           S                         B17
+COLB2710111 5   *Q21_11           S                         B17
+COLB2810121 5   *Q21_12           S                         B17
+COLB3010131 5   *Q24_1            S                         B17
+COLB3110141 5   *Q24_2            S                         B17
+COLB3210151 5   *Q24_3            S                         B17
+COLB3310161 5   *Q24_4            S                         B17
+COLB3410171 5   *Q24_5            S                         B17
+COLB3510181 5   *Q24_6            S                         B17
+COLB3610191 5   *Q24_7            S                         B17
+COLB3710201 5   *Q24_8            S                         B17
+COLB3810211 5   *Q24_9            S                         B17
+COLB3910221 5   *Q25_01           S                         B17
+COLB4010231 5   *Q25_02           S                         B17
+COLB4110241 5   *Q25_03           S                         B17
+COLB4210251 5   *Q25_04           S                         B17
+COLB4310261 5   *Q25_05           S                         B17
+COLB4410271 5   *Q25_06           S                         B17
+COLB4510281 5   *Q25_07           S                         B17
+COLB4610291 5   *Q25_08           S                         B17
+COLB4710301 5   *Q25_09           S                         B17
+COLB4810311 5   *Q25_10           S                         B17
+COLB4910321 3   *Q26_1            S
+COLB5010331 3   *Q26_2            S                         B49
+COLB5110341 3   *Q26_3            S                         B49
+COLB5210351 3   *Q26_4            S                         B49
+COLB5310361 3   *Q26_5            S                         B49
+COLB5410371 3   *Q26_6            S                         B49
+COLB5510381 3   *Q26_7            S                         B49
+COLB5610391 3   *Q26_8            S                         B49
+COLB5710401 3   *Q26_9            S                         B49
+COLB5810411 5   *Q27_01           S                         B17
+COLB5910421 5   *Q27_02           S                         B17
+COLB6010431 5   *Q27_03           S                         B17
+COLB6110441 5   *Q27_04           S                         B17
+COLB6210451 5   *Q27_05           S                         B17
+COLB6310461 5   *Q27_06           S                         B17
+COLB6410471 5   *Q27_07           S                         B17
+COLB6510481 5   *Q27_08           S                         B17
+COLB6610491 5   *Q27_09           S                         B17
+COLB6710501 5   *Q27_10           S                         B17
+
+* for weight(RA) Bxxのweight
+COLC1710511     *w_Q21_01         R                     02 1
+COLC1810521     *w_Q21_02         R                     02 1
+COLC1910531     *w_Q21_03         R                     02 1
+COLC2010541     *w_Q21_04         R                     02 1
+COLC2110551     *w_Q21_05         R                     02 1
+COLC2210561     *w_Q21_06         R                     02 1
+COLC2310571     *w_Q21_07         R                     02 1
+COLC2410581     *w_Q21_08         R                     02 1
+COLC2510591     *w_Q21_09         R                     02 1
+COLC2610601     *w_Q21_10         R                     02 1
+COLC2710611     *w_Q21_11         R                     02 1
+COLC2810621     *w_Q21_12         R                     02 1
+COLC3010631     *w_Q24_1          R                     02 1
+COLC3110641     *w_Q24_2          R                     02 1
+COLC3210651     *w_Q24_3          R                     02 1
+COLC3310661     *w_Q24_4          R                     02 1
+COLC3410671     *w_Q24_5          R                     02 1
+COLC3510681     *w_Q24_6          R                     02 1
+COLC3610691     *w_Q24_7          R                     02 1
+COLC3710701     *w_Q24_8          R                     02 1
+COLC3810711     *w_Q24_9          R                     02 1
+COLC3910721     *w_Q25_01         R                     02 1
+COLC4010731     *w_Q25_02         R                     02 1
+COLC4110741     *w_Q25_03         R                     02 1
+COLC4210751     *w_Q25_04         R                     02 1
+COLC4310761     *w_Q25_05         R                     02 1
+COLC4410771     *w_Q25_06         R                     02 1
+COLC4510781     *w_Q25_07         R                     02 1
+COLC4610791     *w_Q25_08         R                     02 1
+COLC4710801     *w_Q25_09         R                     02 1
+COLC4810811     *w_Q25_10         R                     02 1
+COLC4910821     *w_Q26_1          R                     02 1
+COLC5010831     *w_Q26_2          R                     02 1
+COLC5110841     *w_Q26_3          R                     02 1
+COLC5210851     *w_Q26_4          R                     02 1
+COLC5310861     *w_Q26_5          R                     02 1
+COLC5410871     *w_Q26_6          R                     02 1
+COLC5510881     *w_Q26_7          R                     02 1
+COLC5610891     *w_Q26_8          R                     02 1
+COLC5710901     *w_Q26_9          R                     02 1
+COLC5810911     *w_Q27_01         R                     02 1
+COLC5910921     *w_Q27_02         R                     02 1
+COLC6010931     *w_Q27_03         R                     02 1
+COLC6110941     *w_Q27_04         R                     02 1
+COLC6210951     *w_Q27_05         R                     02 1
+COLC6310961     *w_Q27_06         R                     02 1
+COLC6410971     *w_Q27_07         R                     02 1
+COLC6510981     *w_Q27_08         R                     02 1
+COLC6610991     *w_Q27_09         R                     02 1
+COLC6711001     *w_Q27_10         R                     02 1
+
+* sum(RA)
+COLD2111015     *sum_Q21          R                     01 1
+COLD2411065     *sum_Q24          R                     01 1
+COLD2511115     *sum_Q25          R                     01 1
+COLD2611165     *sum_Q26          R                     01 1
+COLD2711215     *sum_Q27          R                     01 1
+
+* ct categorize **************************************************************
+COLE0211511 7   *age_step_10      S
+
+* text mining ****************************************************************
+COLF051161251   *group_mining     S
+
+* New Face *******************************************************************
+COLNF111712181 3*NF1_S01_E02_S03  L3  031018
+
+* new categorize 2021.10.14(木) **********************************************
+COLE341201230   *Q15_1            S
+COLE351203230   *Q15_2            S                         E34
+COLE361205230   *Q15_3            S                         E34
+COLE371207230   *Q15_4            S                         E34
+COLE381209230   *Q15_5            S                         E34
+COLE391211230   *Q15_sq_A         S                         E34
+COLE401213230   *Q15_sq_B         S                         E34
+COLE411215230   *Q15_sq_C         S                         E34
+COLE421217230   *Q15_sq_D         S                         E34
+COLE431219230   *Q15_sq_E         S                         E34
+COLE441221230   *Q16_01           S                         E34
+COLE451223230   *Q16_02           S                         E34
+COLE461225230   *Q16_03           S                         E34
+COLE471227230   *Q16_04           S                         E34
+COLE481229230   *Q16_05           S                         E34
+COLE491231230   *Q16_06           S                         E34
+COLE501233230   *Q16_07           S                         E34
+COLE511235230   *Q16_08           S                         E34
+COLE521237230   *Q16_09           S                         E34
+COLE531239230   *Q16_10           S                         E34
+COLE541241230   *Q16_11           S                         E34
+COLE551243230   *Q16_B_1          S                         E34
+COLE561245230   *Q16_B_2          S                         E34
+COLE571247230   *Q16_B_3          S                         E34
+COLE581249230   *Q16_B_4          S                         E34
+COLE591251230   *Q16_B_5          S                         E34
+COLE601253230   *Q16_B_6          S                         E34
+COLE611255230   *Q16_B_7          S                         E34
+COLE621257230   *Q16_B_8          S                         E34
+COLE631259230   *Q16_B_9          S                         E34
+COLE641261230   *Q20_1            S                         E34
+COLE651263230   *Q20_2            S                         E34
+COLE661265230   *Q20_3            S                         E34
+COLE671267230   *Q20_4            S                         E34
+COLE681269230   *Q20_5            S                         E34
+COLE691271230   *Q20_6            S                         E34
+COLE701273230   *Q20_7            S                         E34
+COLE711275230   *Q20_8            S                         E34
+COLE721277230   *Q20_9            S                         E34
+
