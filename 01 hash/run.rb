@@ -1,19 +1,9 @@
 
-def test(**h)
-  a = []
-  h.each do |k, v|
-    a << "#{k}: #{v}"
-  end
-  a.join(', ')
-end
-
-h = {a: 1, b: 2, c: 'test'}
-p h
-
-a = test(**h)
-p a
-
-b = test(d: 3, e: 4)
-p b
+# to_h‚ð‚µ‚½‚Æ‚«Akey‚Ìd•¡‚Íã‘‚«‚É‚È‚é‚æ‚¤‚Å‚·B
+# a = (1..5).to_a
+a = [1, 2, 3, 1, 5]
+b = (1..5).map{((_1 - 1) + 'A'.ord).chr}
+c = a.zip(b).to_h
+pp c
 ################################
 
