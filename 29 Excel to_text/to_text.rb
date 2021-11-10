@@ -125,10 +125,10 @@ pos_list = load_position
 apf = load_apf
 text_size = apf_length(apf)
 data = excel_load("#{Dir.pwd}/pickup data.xlsx")
-col = []
 #-------------------------------
 
 # main
+col = []
 data.each_with_index do |ar, idx|
   next if idx <= 2
   h = {}
