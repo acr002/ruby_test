@@ -59,6 +59,9 @@ def load_apf(path = Dir.pwd)
       h[:type]    = b[34, 1].strip.to_sym
       h[:limit] = 1 if h[:limit].zero?
       h[:range]   = h[:size] * h[:limit]
+      if h[:type] == :R
+        h[:decimal] = b[56, 1].to_i
+      end
       apf[h[:key]] = h
     end
   end
@@ -80,14 +83,15 @@ def to_text(text_size, apf, h)
   ol = ' ' * text_size
   h.each do |k, v|
     unless apf.include?(k)
-      puts 'error'
+      puts 'error apf has not key'
       pp k
       pp v
     end
     ap = apf[k]
     case ap[:type]
     when :R
-      ol.midre_l(v, ap)
+      v_decimal = v.map{_1 * (10 ** ap[:decimal])}
+      ol.midre_l(v_decimal, ap)
     when :M
       ol.midre(v, ap)
     when :S
