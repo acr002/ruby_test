@@ -14,18 +14,18 @@ require './works_on_code.rb'
 class String
   # 値を取得する
   # zeroは除外しています。
-  def value(tapf)
+  def value(apf)
     ar = []
-    buf = self[tapf[:x] - 1, tapf[:range]].strip
-    tapf[:limit].times do |i|
-      a = buf[i * tapf[:size], tapf[:size]].to_i
+    buf = self[apf[:x] - 1, apf[:range]].strip
+    apf[:limit].times do |i|
+      a = buf[i * apf[:size], apf[:size]].to_i
       ar << a unless a.zero?
     end
     ar
   end
 
-  def value_in(tapf)
-    self[tapf[:x] - 1, tapf[:range]]
+  def value_in(apf)
+    self[apf[:x] - 1, apf[:range]]
   end
 
   # 出力する値の調整
@@ -34,14 +34,6 @@ class String
     t_range = self.size - range
     t_range = 0 if t_range.negative?
     self[t_range..-1]
-  end
-
-  # 値を出力する
-  def fix_ar(tapf, ar, padding = '0')
-    a_buf = ar.map{_1.to_s.rjust(tapf[:size], padding)}.join
-    range = tapf[:range]
-    a = a_buf[0, range]
-    self[(tapf[:x] - 1), range] = a.ljust(range)
   end
 
   # 値を出力する
@@ -69,27 +61,6 @@ class Array
   # 実数(RA)の場合はpaddingの指定もしてください。
   def to_buf(apf, padding = '0')
     self.map{_1.to_s.rjust(apf[:size], padding)}.join
-  end
-
-  def include_all?(list)
-    include_works(list).all?
-  end
-
-  def include_any?(list)
-    include_works(list).any?
-  end
-
-  def include_true_count(list)
-    h = include_works(list).tally
-    h[true]
-  end
-
-  def include_works(list)
-    ar_flag = []
-    list.each do |e|
-      ar_flag << self.include?(e)
-    end
-    ar_flag
   end
 
   # 以下はapfではなく数値を指定する場合。
