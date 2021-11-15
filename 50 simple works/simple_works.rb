@@ -1,6 +1,7 @@
 
 require 'csv'
 require 'pp'
+require './works_on_code.rb'
 
 # textを簡単に修正できるプログラムを作成します。
 # また、確認できるものも欲しいです。
@@ -12,6 +13,7 @@ require 'pp'
 
 class String
   # 値を取得する
+  # zeroは除外しています。
   def value(apf)
     ar = []
     buf = self[apf[:x] - 1, apf[:range]].strip
@@ -20,6 +22,18 @@ class String
       ar << a unless a.zero?
     end
     ar
+  end
+
+  def value_in(apf)
+    self[apf[:x] - 1, apf[:range]]
+  end
+
+  # 出力する値の調整
+  # range overが発生した場合のための処理
+  def pretty_buf(range)
+    t_range = self.size - range
+    t_range = 0 if t_range.negative?
+    self[t_range..-1]
   end
 
   # 値を出力する
@@ -36,7 +50,8 @@ class String
   def midre_l(buf, apf)
     x = apf[:x] - 1
     size = apf[:size]
-    a = buf[0, size]
+    # a = buf[0, size]
+    a = buf.pretty_buf(size)
     self[x, size] = a.rjust(size)
   end
 end
@@ -93,7 +108,6 @@ def put_log(ar, path = 'result.csv')
 end
 ################################
 
-
 apf = load_apf
 log = []
 
@@ -106,21 +120,20 @@ log = []
 
 
 Dir.glob('*.in') do |fn|
+  col = []
   File.foreach(fn) do |line|
-    a = line.value(apf[:M01])
-    if a.include?(12)
-      b = a.dup
-      b.delete(12)
-      # log << [line.value(apf[:SNO]), a.to_buf(apf[:M01])]
-      log << [line.value(apf[:SNO]), a, b]
-    end
+    # 取得したlineを渡し、lineを返してもらう。
+    col << works_on_code(line, apf)
   end
 
-  # fn_out = "#{File.basename(fn, '.*')}.mcs"
-  # p fn_out
-  # File.open(fn_out, 'w'){_1.puts col}
+  # 結果を出力
+  # fn_out = "result #{File.basename(fn, '.*')}.mcs"
+  fn_out = "#{File.basename(fn, '.*')}.mcs"
+  File.open(fn_out, 'w'){_1.puts col}
 end
-put_log(log, 'test log(M01 1).csv')
+#-------------------------------
 
+# Logの出力
+# put_log(log, 'test log(M01 1).csv')
 
 

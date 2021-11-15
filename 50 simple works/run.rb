@@ -1,14 +1,15 @@
 
-
-# dupの場合は浅いコピーになります。
-# もう一次元深くするなら b = a.map(&:dup) を使います。
-a = [[1, 2], [3, 4]]
-b = a
-s = a.dup
-d = a.map(&:dup)
-pp a, b, s, d
-a[0][0] = 'test'
-pp a, b, s, d
+class String
+  # 出力する値の調整
+  # range overが発生した場合のための処理
+  def pretty_buf(range)
+    t_range = self.size - range
+    t_range = 0 if t_range.negative?
+    self[t_range..-1]
+  end
+end
+a = '1234'
+p a.pretty_buf(2)
 ################################
 
 

@@ -1,0 +1,27 @@
+*-----------------------------------------------------------[date: 2021.11.15]
+*jobcode: E31003_01
+*jobname: *
+*-----------------------------------------------------------------------------
+
+* works[2]sample cut, B[SNO]000, Log[cut]
+* works[3]tdt, B[SNO]000, A[xxx]x, Log[tdt]
+* works[131]set clear, A[], C[], Log[set clear]
+
+* all blank //////////////////////////////////////////////////////////////////
+works[1]all blank, B[SNO], Log[all blank]
+
+* set and clear //////////////////////////////////////////////////////////////
+* works[131]set clear, Log[01 set clear], A[S01]1, C[M04]
+
+* flag ///////////////////////////////////////////////////////////////////////
+* works[113]flag, A[F01]1, B[135]1 2
+* clear //////////////////////////////////////////////////////////////////////
+
+* クリア対象にフラグ対象が含まれるため、フラグのすぐあとにクリアを用意しました。
+works[111]flag, Log[02 valid on], A[FL4]1, B[R01]
+works[111]flag, Log[02 valid on], A[FL4]2, B[R02]
+
+* works[121]clear, Log[03 clear(flag_off)], B[F59]1 , C[R66 R67 R68 R69]
+* works[111]flag, Log[02 valid on], A[F49]1, B[R49]
+* works[121]clear, Log[03 clear(flag_off)], B[F49]1 , C[R70 R71 R72 R73]
+
